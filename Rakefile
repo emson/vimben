@@ -30,16 +30,20 @@ end
 
 task :update do
   puts "Cleaning the vimben folder"
-  `git clean -xdf -- vimben &> /dev/null`
+  # `git clean -xdf -- vimben &> /dev/null`
+  `git clean -xdf -- vimben`
 
   puts "Pulling latest changes"
-  `git pull > /dev/null`
+  # `git pull > /dev/null`
+  `git pull`
 
   puts "Synchronising submodules urls"
-  `git submodule sync > /dev/null`
+  # `git submodule sync > /dev/null`
+  `git submodule sync`
 
   puts "Updating the submodules"
-  `git submodule update --init > /dev/null`
+  # `git submodule update --init > /dev/null`
+  `git submodule update --init`
 end
 
 
