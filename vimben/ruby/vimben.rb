@@ -51,7 +51,7 @@ module VimBen
 end
 
 # require 'vimben/errors'
-# require 'vimben/git'
+require 'vimben/git'
 require 'vimben/vim'
 # require 'vimben/gems'
 # require 'vimben/github'
