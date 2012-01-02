@@ -54,3 +54,11 @@ task :default do
 end
 
 
+namespace :dev do
+  desc "Update submodules"
+  task :update_submodules do
+    submodules.each do |submodule|
+      update_submodule(submodule)
+    end
+  end
+end
