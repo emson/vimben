@@ -2,6 +2,7 @@
 _backup
 _temp
 .netrwhist
+.DS_Store
 
 # Vimius file
 .vimius

@@ -1,0 +1,9 @@
+
+"set paths to pathogen
+set runtimepath=$HOME/.vim/vimben/vim/,$HOME/.vim/vimben/vim/core/vim-pathogen,$VIMRUNTIME
+call pathogen#infect('$HOME/.vim/vimben/vim/bundle')
+
+" set theme and color scheme
+syntax enable
+set background=dark
+colorscheme solarized
