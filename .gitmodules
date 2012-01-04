@@ -19,9 +19,15 @@
 [submodule "vimben/vim/bundle/vim-surround"]
 	path = vimben/vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
-[submodule "vimben/vim/vim-commentary"]
-	path = vimben/vim/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
 [submodule "vimben/vim/bundle/syntastic"]
 	path = vimben/vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
+[submodule "vimben/vim/bundle/vim-endwise"]
+	path = vimben/vim/bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule "vimben/vim/bundle/ack.vim"]
+	path = vimben/vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "vimben/vim/bundle/vim-commentary"]
+	path = vimben/vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git

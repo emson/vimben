@@ -48,5 +48,22 @@ $ curl -Lo- https://raw.github.com/emson/vimben/master/bootstrap.sh | bash
 
 <https://github.com/scrooloose/nerdtree>
 
+### Syntastic
+
+<https://github.com/scrooloose/syntastic>
+
+### Vim EndWise
+
+<https://github.com/tpope/vim-endwise.git>
+
+Note that you will need to have the following settings to ensure that
+the `end` is appropriately indented.
+    
+    filetype on
+    filetype indent on
+    filetype plugin on
+    autocmd BufEnter * lcd %:p:h
+
+
 
 

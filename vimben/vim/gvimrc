@@ -29,10 +29,11 @@ if has("statusline") && !&cp
   let g:syntastic_auto_loc_list=2
 
   " Finish the statusline
-  set statusline+=Line:%l/%L[%p%%]
-  set statusline+=Col:%v
-  set statusline+=Buf:#%n
-  set statusline+=[%b][0x%B]
+  set statusline+=Line:%l/%L
+  "set statusline+=Line:%l/%L[%p%%]
+  "set statusline+=Col:%v
+  "set statusline+=Buf:#%n
+  "set statusline+=[%b][0x%B]
 endif
 
 if has("gui_running")

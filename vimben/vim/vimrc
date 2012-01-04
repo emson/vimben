@@ -31,6 +31,12 @@ set backspace=indent,eol,start    " backspace through everything in insert mode
 if exists("g:enable_mvim_shift_arrow")
   let macvim_hig_shift_movement = 1 " mvim shift-arrow-keys
 endif
+" required of 'endwise' plugin
+filetype on
+filetype indent on
+filetype plugin on
+autocmd BufEnter * lcd %:p:h
+
 
 " List chars
 set listchars=""                  " Reset the listchars
@@ -97,9 +103,20 @@ map <Leader>= <C-w>=
 " Map leader key n to open NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 
+" Remove trailing whitespace
+map <Leader>w :%s/\s\+$//g<CR>
 
 " Insert the current directory into a command-line path
 cmap <C-P> <C-R>=expand("%:p:h") . "/"
+
+
+if has("gui_macvim")
+  " Command-Shift-F on OSX
+  map <D-F> :Ack<space>
+else
+  " Control-Shift-F on other systems
+  map <C-F> :Ack<space>
+endif
 
 
 if has("autocmd")
@@ -107,6 +124,7 @@ if has("autocmd")
     au FocusLost * silent! wall
   endif
 endif
+
 
 "" Functions
 
