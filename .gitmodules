@@ -7,3 +7,21 @@
 [submodule "vimben/vim/bundle/vim-colors-solarized"]
 	path = vimben/vim/bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "vimben/vim/bundle/nerdtree"]
+	path = vimben/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vimben/vim/bundle/vim-markdown"]
+	path = vimben/vim/bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule "vimben/vim/bundle/vim-rails"]
+	path = vimben/vim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "vimben/vim/bundle/vim-surround"]
+	path = vimben/vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vimben/vim/vim-commentary"]
+	path = vimben/vim/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vimben/vim/bundle/syntastic"]
+	path = vimben/vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git

@@ -1,1 +1,76 @@
 
+
+" Remove toolbar
+:set guioptions-=T  "remove toolbar
+
+" Set font and size
+set gfn=Menlo:h14
+
+"" Add status line and syntastic functionality
+
+if has("statusline") && !&cp
+  set laststatus=2  " always show the status bar
+
+  " Without setting this, ZoomWin restores windows in a way that causes
+  " equalalways behavior to be triggered the next time CommandT is used.
+  " This is likely a bludgeon to solve some other issue, but it works
+  set noequalalways
+
+  " Start the status line
+  set statusline=%f\ %m\ %r
+
+
+  " Add syntastic
+  set statusline+=%#warningmsg#
+  set statusline+=%{SyntasticStatuslineFlag()}
+  set statusline+=%*
+  let g:syntastic_enable_signs=1
+  let g:syntastic_quiet_warnings=0
+  let g:syntastic_auto_loc_list=2
+
+  " Finish the statusline
+  set statusline+=Line:%l/%L[%p%%]
+  set statusline+=Col:%v
+  set statusline+=Buf:#%n
+  set statusline+=[%b][0x%B]
+endif
+
+if has("gui_running")
+  if has("autocmd")
+    " Automatically resize splits when resizing MacVim window
+    autocmd VimResized * wincmd =
+  endif
+endif
+
+"" Key Mappings
+
+if has("gui_macvim")
+  " Map command-[ and command-] to indenting or outdenting
+  " while keeping the original selection in visual mode
+  vmap <D-]> >gv
+  vmap <D-[> <gv
+
+  nmap <D-]> >>
+  nmap <D-[> <<
+
+  omap <D-]> >>
+  omap <D-[> <<
+
+  imap <D-]> <Esc>>>i
+  imap <D-[> <Esc><<i
+else
+  " Map command-[ and command-] to indenting or outdenting
+  " while keeping the original selection in visual mode
+  vmap <A-]> >gv
+  vmap <A-[> <gv
+
+  nmap <A-]> >>
+  nmap <A-[> <<
+
+  omap <A-]> >>
+  omap <A-[> <<
+
+  imap <A-]> <Esc>>>i
+  imap <A-[> <Esc><<i
+endif
+
