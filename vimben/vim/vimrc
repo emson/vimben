@@ -100,15 +100,14 @@ nmap <leader>hs :set hlsearch! hlsearch?<CR>
 " Adjust viewports to the same size
 map <Leader>= <C-w>=
 
-" Map leader key n to open NERDTree
-map <Leader>n :NERDTreeToggle<CR>
-
 " Remove trailing whitespace
 map <Leader>w :%s/\s\+$//g<CR>
 
 " Insert the current directory into a command-line path
 cmap <C-P> <C-R>=expand("%:p:h") . "/"
 
+" Command-s to save
+map <D-s> :w<space>
 
 if has("gui_macvim")
   " Command-Shift-F on OSX
@@ -124,6 +123,72 @@ if has("autocmd")
     au FocusLost * silent! wall
   endif
 endif
+
+
+"" Plugin specific mappings
+" NERDTree
+
+let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.class$', '\.o', '\~$']
+let NERDTreeHijackNetrw = 0
+
+augroup AuNERDTreeCmd
+autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
+autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
+
+" If the parameter is a directory, cd into it
+function s:CdIfDirectory(directory)
+  let explicitDirectory = isdirectory(a:directory)
+  let directory = explicitDirectory || empty(a:directory)
+
+  if explicitDirectory
+    exe "cd " . fnameescape(a:directory)
+  endif
+
+  " Allows reading from stdin
+  " ex: git diff | mvim -R -
+  if strlen(a:directory) == 0
+    return
+  endif
+
+  if directory
+    NERDTree
+    wincmd p
+    bd
+  endif
+
+  if explicitDirectory
+    wincmd p
+  endif
+endfunction
+
+" NERDTree utility function
+function s:UpdateNERDTree(...)
+  let stay = 0
+
+  if(exists("a:1"))
+    let stay = a:1
+  end
+
+  if exists("t:NERDTreeBufName")
+    let nr = bufwinnr(t:NERDTreeBufName)
+    if nr != -1
+      exe nr . "wincmd w"
+      exe substitute(mapcheck("R"), "<CR>", "", "")
+      if !stay
+        wincmd p
+      end
+    endif
+  endif
+
+  if exists(":CommandTFlush") == 2
+    CommandTFlush
+  endif
+endfunction
+
+" Map leader key n to open NERDTree
+map <Leader>n :NERDTreeToggle<CR>
+
+
 
 
 "" Functions
