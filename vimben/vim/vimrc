@@ -12,7 +12,6 @@ set ruler             " Show line and column number
 syntax enable         " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8    " Set default encoding to UTF-8
 
-
 " set theme and color scheme
 syntax enable
 set background=dark
@@ -76,6 +75,9 @@ set wildignore+=*.swp,*~,._*
 
 "" Key Mappings
 
+" remap leader key from '\' to ','
+let mapleader = ","
+
 " upper/lower word
 nmap <leader>u mQviwU`Q
 nmap <leader>l mQviwu`Q
@@ -108,6 +110,9 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/"
 
 " Command-s to save
 map <D-s> :w<space>
+
+" Switch viewports, round robin
+map <Leader>w <C-w><C-w>
 
 if has("gui_macvim")
   " Command-Shift-F on OSX
