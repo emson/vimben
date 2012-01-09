@@ -112,7 +112,7 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/"
 map <D-s> :w<space>
 
 " Switch viewports, round robin
-map <Leader>w <C-w><C-w>
+map <Leader>p <C-w><C-w>
 
 if has("gui_macvim")
   " Command-Shift-F on OSX
