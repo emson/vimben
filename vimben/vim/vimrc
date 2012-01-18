@@ -15,7 +15,7 @@ set encoding=utf-8    " Set default encoding to UTF-8
 " set theme and color scheme
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme vividchalk
 
 
 "" Whitespace
@@ -72,6 +72,8 @@ set wildignore+=vendor/gems/*,vendor/cache/*,.bundle/*,.sass-cache/*
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
 
+" Vim Powerline settings
+set laststatus=2
 
 "" Key Mappings
 
@@ -112,7 +114,7 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/"
 map <D-s> :w<space>
 
 " Switch viewports, round robin
-map <Leader>p <C-w><C-w>
+map <Leader>m <C-w><C-w>
 
 if has("gui_macvim")
   " Command-Shift-F on OSX

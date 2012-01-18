@@ -37,6 +37,8 @@ if has("statusline") && !&cp
 endif
 
 if has("gui_running")
+colorscheme solarized
+
   if has("autocmd")
     " Automatically resize splits when resizing MacVim window
     autocmd VimResized * wincmd =
