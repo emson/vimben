@@ -116,12 +116,36 @@ map <D-s> :w<space>
 " Switch viewports, round robin
 map <Leader>m <C-w><C-w>
 
+" Command-Shift-F on OSX
+map <D-F> :Ack<space>
+
+
 if has("gui_macvim")
-  " Command-Shift-F on OSX
-  map <D-F> :Ack<space>
+
 else
   " Control-Shift-F on other systems
-  map <C-F> :Ack<space>
+  "map <C-F> :Ack<space>
+
+  " Control + Shift for tabbing between non-gui tab panes
+  set showtabline=2               " File tabs allways visible
+  :nmap <C-S-Tab> :tabprevious<cr>
+  :nmap <Tab> :tabnext<cr>
+  :nmap <C-t> :tabnew<cr>
+  :map <C-t> :tabnew<cr>
+  :map <C-S-Tab> :tabprevious<cr>
+  :map <Tab> :tabnext<cr>
+  :map <C-q> :tabclose<cr>
+
+  " STOP USING ARROW KEYS!!
+  map <up> <nop>
+  map <down> <nop>
+  map <left> <nop>
+  map <right> <nop>
+  imap <up> <nop>
+  imap <down> <nop>
+  imap <left> <nop>
+  imap <right> <nop>
+
 endif
 
 
@@ -193,8 +217,8 @@ function s:UpdateNERDTree(...)
 endfunction
 
 " Map leader key n to open NERDTree
-map <Leader>n :NERDTreeToggle<CR>
-
+"map <Leader>n :NERDTreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle `=codepath#path()`<CR>
 
 
 

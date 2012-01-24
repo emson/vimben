@@ -64,6 +64,13 @@ the `end` is appropriately indented.
     filetype plugin on
     autocmd BufEnter * lcd %:p:h
 
+### Codepath
+
+<https://github.com/lucapette/codepath.vim>
+
+Functionality that creates a project root path. This is useful for
+plugins like Command-T and NERDtree which will use the directory of the
+current file by default.
 
 
 

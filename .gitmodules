@@ -34,3 +34,6 @@
 [submodule "vimben/vim/bundle/vim-powerline"]
 	path = vimben/vim/bundle/vim-powerline
 	url = https://github.com/Lokaltog/vim-powerline.git
+[submodule "vimben/vim/bundle/codepath.vim"]
+	path = vimben/vim/bundle/codepath.vim
+	url = https://github.com/lucapette/codepath.vim.git
