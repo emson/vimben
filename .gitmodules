@@ -37,3 +37,6 @@
 [submodule "vimben/vim/bundle/codepath.vim"]
 	path = vimben/vim/bundle/codepath.vim
 	url = https://github.com/lucapette/codepath.vim.git
+[submodule "vimben/vim/bundle/ctrlp.vim"]
+	path = vimben/vim/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim.git

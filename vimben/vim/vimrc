@@ -15,7 +15,7 @@ set encoding=utf-8    " Set default encoding to UTF-8
 " set theme and color scheme
 syntax enable
 set background=dark
-colorscheme vividchalk
+colorscheme impact
 
 
 "" Whitespace
@@ -78,7 +78,7 @@ set laststatus=2
 "" Key Mappings
 
 " remap leader key from '\' to ','
-let mapleader = ","
+let mapleader = "\\"
 
 " upper/lower word
 nmap <leader>u mQviwU`Q
@@ -113,18 +113,13 @@ cmap <C-P> <C-R>=expand("%:p:h") . "/"
 " Command-s to save
 map <D-s> :w<space>
 
-" Switch viewports, round robin
-map <Leader>m <C-w><C-w>
-
-" Command-Shift-F on OSX
-map <D-F> :Ack<space>
-
-
 if has("gui_macvim")
+  " Command-Shift-F on OSX
+  map <D-F> :Ack<space>
 
 else
   " Control-Shift-F on other systems
-  "map <C-F> :Ack<space>
+  map <C-F> :Ack<space>
 
   " Control + Shift for tabbing between non-gui tab panes
   set showtabline=2               " File tabs allways visible
@@ -219,7 +214,6 @@ endfunction
 " Map leader key n to open NERDTree
 "map <Leader>n :NERDTreeToggle<CR>
 nnoremap <Leader>n :NERDTreeToggle `=codepath#path()`<CR>
-
 
 
 "" Functions

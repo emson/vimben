@@ -1,7 +1,7 @@
 # ViM files
 _backup
 _temp
-.netrwhist
+*/**/.inetrwhist
 .DS_Store
 
 # Vimius file
