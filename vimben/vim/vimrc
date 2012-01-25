@@ -212,8 +212,7 @@ function s:UpdateNERDTree(...)
 endfunction
 
 " Map leader key n to open NERDTree
-"map <Leader>n :NERDTreeToggle<CR>
-nnoremap <Leader>n :NERDTreeToggle `=codepath#path()`<CR>
+map <Leader>n :NERDTreeToggle<CR>
 
 
 "" Functions
