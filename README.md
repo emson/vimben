@@ -15,6 +15,27 @@ $ curl -Lo- https://raw.github.com/emson/vimben/master/bootstrap.sh | bash
 
 ## Plugins
 
+Plugins are generally added using Git Submodules. Please add and remove them like so:
+
+**Git Submodules**
+
+Add a submodule:
+
+    git submodule add MY_URL MY_PATH
+
+Updating the submodules:
+
+    git submodule update --init
+
+To remove a submodule you need to:
+
+* Delete the relevant line from the .gitmodules file.
+* Delete the relevant section from .git/config.
+* Run `git rm --cached path_to_submodule`  
+	NB: (no trailing slash).
+* Delete the unwanted directories:  
+	`rm -rf .vim/vimben/vim/bundle/my_module`
+* Commit the now untracked submodule files.
 
 ### Pathogen
 <https://github.com/tpope/vim-pathogen>  
@@ -109,4 +130,15 @@ Once CtrlP is open:
 * Use `<c-z>` to mark/unmark files and `<c-o>` to open them.
 
 
+### TaskPaper
+
+<https://github.com/davidoc/taskpaper.vim.git>
+
+Key mappings:
+
+    \td     Mark task as done
+    \tx     Mark task as cancelled
+    \tc     Show all tasks with context under cursor
+    \tp     Fold all projects
+    \ta     Show all projects and tasks
 
