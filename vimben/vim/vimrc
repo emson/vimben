@@ -34,7 +34,8 @@ endif
 filetype on
 filetype indent on
 filetype plugin on
-autocmd BufEnter * lcd %:p:h
+"autocmd BufEnter * lcd %:p:h " automatically cd's to the opened file
+"directory
 
 
 " List chars
@@ -78,7 +79,7 @@ set laststatus=2
 "" Key Mappings
 
 " remap leader key from '\' to ','
-let mapleader = "\\"
+let mapleader = ","
 
 " upper/lower word
 nmap <leader>u mQviwU`Q
@@ -108,7 +109,7 @@ map <Leader>= <C-w>=
 map <Leader>w :%s/\s\+$//g<CR>
 
 " Insert the current directory into a command-line path
-cmap <C-P> <C-R>=expand("%:p:h") . "/"
+"cmap <C-P> <C-R>=expand("%:p:h") . "/"
 
 " Command-s to save
 map <D-s> :w<space>
@@ -123,13 +124,15 @@ else
 
   " Control + Shift for tabbing between non-gui tab panes
   set showtabline=2               " File tabs allways visible
-  :nmap <C-S-Tab> :tabprevious<cr>
-  :nmap <Tab> :tabnext<cr>
-  :nmap <C-t> :tabnew<cr>
-  :map <C-t> :tabnew<cr>
-  :map <C-S-Tab> :tabprevious<cr>
-  :map <Tab> :tabnext<cr>
-  :map <C-q> :tabclose<cr>
+"  :nmap <C-S-n> :tabprevious<cr>
+"  :nmap <C-n> :tabnext<cr>
+"  :nmap <C-t> :tabnew<cr>
+"  :map <C-t> :tabnew<cr>
+"  :map <C-S-n> :tabprevious<cr>
+"  :map <C-n> :tabnext<cr>
+"  :map <C-q> :tabclose<cr>
+
+:map <Tab> <Leader>be
 
   " STOP USING ARROW KEYS!!
   map <up> <nop>
