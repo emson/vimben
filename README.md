@@ -120,6 +120,14 @@ Once CtrlP is open:
 * Use `<c-y>` to create a new file and its parent dirs.
 * Use `<c-z>` to mark/unmark files and `<c-o>` to open them.
 
+### Snipmate
+
+<https://github.com/msanders/snipmate.vim>
+
+Just press **Tab** after typing a snippet keyword e.g.  
+
+	def [TAB]
+
 
 ### TaskPaper
 
@@ -132,4 +140,6 @@ Key mappings:
     \tc     Show all tasks with context under cursor
     \tp     Fold all projects
     \ta     Show all projects and tasks
+
+
 

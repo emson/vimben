@@ -37,3 +37,6 @@
 [submodule "vimben/vim/bundle/ctrlp.vim"]
 	path = vimben/vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
+[submodule "vimben/vim/bundle/snipmate.vim"]
+	path = vimben/vim/bundle/snipmate.vim
+	url = https://github.com/msanders/snipmate.vim.git
