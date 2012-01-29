@@ -15,7 +15,7 @@ set encoding=utf-8    " Set default encoding to UTF-8
 " set theme and color scheme
 syntax enable
 set background=dark
-colorscheme impact
+colorscheme vibrantink
 
 
 "" Whitespace

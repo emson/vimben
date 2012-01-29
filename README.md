@@ -4,7 +4,7 @@ My personal Vim installation, which is basically a customised fork of the [Janus
 
 ## Installation
 
-To install VimBen, please use our [automatic
+To install VimBen, please use this [automatic
 installer](https://github.com/emson/vimben/blob/master/bootstrap.sh)
 , which backups up any Vim files found in your home folder and installs
 VimBen.
@@ -60,6 +60,22 @@ Contains all the usual Vim color scheme suspects.
 
 <https://github.com/tpope/vim-rails>
 
+* `:Rfind my_model` - will find models and related components, just keep
+  pressing Tab
+* `gf` - go to file under the cursor
+* `:Rake` - run RSpec tests from a spec file
+* `:Rgenerate migration add_foo_to_bar` - run script/generate command
+
+From a model file:
+
+* `:Runittest` - run unit tests
+* `:RVunittest` - run unit tests in a verticle split
+* `:RSunittest` - run unit tests in a horizontal split
+* `:RTunittest` - run unit tests in new tab
+* `Rcontroller` - 
+* `Rfunctionaltest` - 
+
+
 ### Vim Surround
 
 <https://github.com/tpope/vim-surround>
@@ -68,11 +84,17 @@ Contains all the usual Vim color scheme suspects.
 
 <https://github.com/tpope/vim-commentary>
 
+* `\\\` - comment out a line
+* `3\\\` - comment out 3 lines
+* `\\ap` - comment out a paragraph
+* `vv\\` - comment out a line in visual mode
+
 ### Buffer Explorer
 
 <http://vim.sourceforge.net/scripts/script.php?script_id=42>
 
 * `\be` normal open
+* `TAB` is also mapped to `\be`
 * `\bs` horizontal split open
 * `\bv` vertical split open
 * `t` or `Shift Enter` open in tab
@@ -141,5 +163,14 @@ Key mappings:
     \tp     Fold all projects
     \ta     Show all projects and tasks
 
+
+## Pending plugins
+
+* Exuberant Ctags  
+  <http://www.vim.org/scripts/script.php?script_id=610>  
+  <http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/>
+* tComments
+* vim-rake  
+  <https://github.com/tpope/vim-rake>
 
 
