@@ -28,6 +28,7 @@ task :install => [:folders, :link_vim_conf_files] do
 end
 
 
+desc "Update"
 task :update do
   puts "Cleaning the vimben folder"
   # `git clean -xdf -- vimben &> /dev/null`

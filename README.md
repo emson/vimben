@@ -172,6 +172,8 @@ Key mappings:
 
 ## Pending plugins
 
+Additional plugins that may be useful:
+
 * Exuberant Ctags  
   <http://www.vim.org/scripts/script.php?script_id=610>  
   <http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/>
