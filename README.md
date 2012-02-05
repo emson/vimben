@@ -56,6 +56,12 @@ The Vivid Chalk color scheme.
 <http://www.vim.org/scripts/script.php?script_id=625>  
 Contains all the usual Vim color scheme suspects.
 
+### Vim ir_black
+
+<https://github.com/wgibbs/vim-irblack>
+
+Added the IRBlack color scheme.
+
 ### Vim Rails
 
 <https://github.com/tpope/vim-rails>

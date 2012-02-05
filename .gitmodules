@@ -40,3 +40,6 @@
 [submodule "vimben/vim/bundle/snipmate.vim"]
 	path = vimben/vim/bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
+[submodule "vimben/vim/bundle/vim_irblack"]
+	path = vimben/vim/bundle/vim_irblack
+	url = https://github.com/wgibbs/vim-irblack.git
