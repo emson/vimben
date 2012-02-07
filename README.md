@@ -154,7 +154,64 @@ Once CtrlP is open:
 
 Just press **Tab** after typing a snippet keyword e.g.  
 
+	cla [TAB]
 	def [TAB]
+	defs [TAB]
+	defmm [TAB]
+	: [TAB]
+	beg [TAB]
+	req [TAB]
+	case [TAB]
+	if [TAB]
+	r [TAB]
+	w [TAB]
+	rw [TAB]
+	app [TAB]
+	ea [TAB]
+	ead [TAB]
+	eak [TAB]
+	patfh [TAB]
+	tas [TAB]
+
+
+Note the Ruby snippets can be found here:
+
+	MY_VIM_DIR/snipmate.vim/snippets/ruby.snippets
+
+
+### Exuberant CTags
+<https://github.com/vim-scripts/ctags.vim>
+
+Install Exuberant CTags:  
+	brew install ctags-exuberant
+
+Build your tag index file against your source:
+
+    ctags -R --exclude=.git --exclude=log *
+
+Creates a tags file.  Add it to your **.gitignore**
+
+**Commands**  
+
+	Ctrl ]
+	Ctrl t
+    :tag some_method_name
+    :tag /validates_presence_*
+
+* You can use the 'tag' ex command. For example, the command ':tag <tagname>' will jump to the tag named <tagname>.
+* You can position the cursor over a tag name and then press Ctrl-].
+* You can visually select a text and then press Ctrl-] to jump to the tag matching the selected text.
+* You can click on the tag name using the left mouse button, while pressing the <Ctrl> key.
+* You can press the g key and then click on the tag name using the left mouse button.
+* You can use the 'stag' ex command, to open the tag in a new window. For example, the command ':stag func1' will open the func1 definition in a new window.
+* You can position the cursor over a tag name and then press Ctrl-W ]. This will open the tag location in a new window.
+
+**References**  
+
+* <http://vim.wikia.com/wiki/Browsing_programs_with_tags>  
+* <http://paintincode.blogspot.com/2011/04/mac-vim-setup-for-python-programming.html>
+* <http://www.vim.org/scripts/script.php?script_id=610>  
+* <http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/>
 
 
 ### TaskPaper
@@ -170,13 +227,12 @@ Key mappings:
     \ta     Show all projects and tasks
 
 
+
+
 ## Pending plugins
 
 Additional plugins that may be useful:
 
-* Exuberant Ctags  
-  <http://www.vim.org/scripts/script.php?script_id=610>  
-  <http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/>
 * tComments
 * vim-rake  
   <https://github.com/tpope/vim-rake>

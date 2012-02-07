@@ -43,3 +43,6 @@
 [submodule "vimben/vim/bundle/vim_irblack"]
 	path = vimben/vim/bundle/vim_irblack
 	url = https://github.com/wgibbs/vim-irblack.git
+[submodule "vimben/vim/bundle/ctags.vim"]
+	path = vimben/vim/bundle/ctags.vim
+	url = https://github.com/vim-scripts/ctags.vim.git
