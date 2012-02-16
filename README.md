@@ -2,6 +2,7 @@
 
 My personal Vim installation, which is basically a customised fork of the [Janus Project](https://github.com/carlhuda/janus/).
 
+
 ## Installation
 
 To install VimBen, please use this [automatic
@@ -12,6 +13,17 @@ VimBen.
 ```bash
 $ curl -Lo- https://raw.github.com/emson/vimben/master/bootstrap.sh | bash
 ```
+
+## Useful Commands
+
+Switch to command line: `Ctrl-z`  
+Switch Vim to foreground: `fg`  
+
+## Modifications
+
+Added a simple 'Dark Room' toggle: `F1`  
+<http://paulrouget.com/e/vimdarkroom/>
+
 
 ## Plugins
 
@@ -61,6 +73,9 @@ Contains all the usual Vim color scheme suspects.
 <https://github.com/wgibbs/vim-irblack>
 
 Added the IRBlack color scheme.
+
+    colorscheme: ir_black
+
 
 ### Vim Rails
 
@@ -214,6 +229,16 @@ Creates a tags file.  Add it to your **.gitignore**
 * <http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/>
 
 
+## Pending plugins
+
+Additional plugins that may be useful:
+
+* tComments
+* vim-rake  
+  <https://github.com/tpope/vim-rake>
+
+## Unsure of but potential plugins
+
 ### TaskPaper
 
 <https://github.com/davidoc/taskpaper.vim.git>
@@ -226,15 +251,5 @@ Key mappings:
     \tp     Fold all projects
     \ta     Show all projects and tasks
 
-
-
-
-## Pending plugins
-
-Additional plugins that may be useful:
-
-* tComments
-* vim-rake  
-  <https://github.com/tpope/vim-rake>
 
 
