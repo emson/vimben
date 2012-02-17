@@ -101,6 +101,12 @@ From a model file:
 
 <https://github.com/tpope/vim-surround>
 
+`"Hello world!"` to `'Hello world!'` - `cs"'`  
+`'Hello world!'` to `<q>Hello world</q>` - `cs'<q>`  
+`"Hello world!"` to `Hello world!` - `ds"`  
+`"Wrap whole line in parentheses"` - `yss"`
+`<em>Hello</em> world!` - `ysiw<em>`
+
 ### Vim Commentary
 
 <https://github.com/tpope/vim-commentary>
@@ -252,4 +258,7 @@ Key mappings:
     \ta     Show all projects and tasks
 
 
+## References
+
+* [Vim commands cheatsheet](http://bullium.com/support/vim.html)
 
