@@ -12,6 +12,9 @@ set ruler             " Show line and column number
 syntax enable         " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8    " Set default encoding to UTF-8
 
+" automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vimrc
+
 " set vim color level
 " http://vim.wikia.com/wiki/256_colors_in_vim
 set t_Co=256
@@ -85,6 +88,7 @@ set laststatus=2
 
 " remap leader key from '\' to ','
 let mapleader = ","
+" set timeoutlen=250 " ever notice a slight lag after typing the leader key + command this lowers the timeout
 
 " upper/lower word
 nmap <leader>u mQviwU`Q
@@ -116,16 +120,19 @@ map <Leader>w :%s/\s\+$//g<CR>
 " Insert the current directory into a command-line path
 "cmap <C-P> <C-R>=expand("%:p:h") . "/"
 
-" Command-s to save
-map <D-s> :w<space>
+" Ctrl-s to save
+noremap <C-S> :w<CR>
+noremap <C-S> <ESC>:w<CR><Insert>
 
 if has("gui_macvim")
+  " Command-s to save
+  map <D-s> :w<space>
   " Command-Shift-F on OSX
   map <D-F> :Ack<space>
 
 else
   " Control-Shift-F on other systems
-  map <C-F> :Ack<space>
+  " map <C-S-F> :Ack<space>
 
   " Control + Shift for tabbing between non-gui tab panes
   set showtabline=2               " File tabs allways visible
@@ -137,18 +144,21 @@ else
 "  :map <C-n> :tabnext<cr>
 "  :map <C-q> :tabclose<cr>
 
-:map <Tab> <Leader>be
+  map <Tab> <Leader>be
 
   " STOP USING ARROW KEYS!!
   map <up> <nop>
   map <down> <nop>
-  map <left> <nop>
-  map <right> <nop>
+  " map <left> <nop>
+  " map <right> <nop>
   imap <up> <nop>
   imap <down> <nop>
-  imap <left> <nop>
-  imap <right> <nop>
+  " imap <left> <nop>
+  " imap <right> <nop>
 
+  " map arrow keys to previous / next buffer
+  noremap <left> :bp<CR>
+  noremap <right> :bn<CR>
 endif
 
 

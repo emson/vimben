@@ -18,6 +18,16 @@ $ curl -Lo- https://raw.github.com/emson/vimben/master/bootstrap.sh | bash
 
 Switch to command line: `Ctrl-z`  
 Switch Vim to foreground: `fg`  
+Move forward one screen: `Ctrl-F`  
+Move backward one screen: `Ctrl-B`  
+Jump to the last insertion point: `gi` or two back ticks  
+Jump to insertion point history: `g;` or `g,`  
+Jump list: `:jumps`  
+Record a macro into register 'a': `qa`  
+Stop recording the macro: `q`  
+Get from register 'a': `@a`  
+
+
 
 ## Modifications
 
@@ -261,4 +271,8 @@ Key mappings:
 ## References
 
 * [Vim commands cheatsheet](http://bullium.com/support/vim.html)
+* [Seven habits of effective text editing](http://www.moolenaar.net/habits.html)
+* [Vim Wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
+* [VimBits](http://vimbits.com)
+
 
