@@ -274,5 +274,5 @@ Key mappings:
 * [Seven habits of effective text editing](http://www.moolenaar.net/habits.html)
 * [Vim Wiki](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
 * [VimBits](http://vimbits.com)
-
+* [Best Vim tips](http://rayninfo.co.uk/vimtips.html)
 

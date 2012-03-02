@@ -12,9 +12,6 @@ set ruler             " Show line and column number
 syntax enable         " Turn on syntax highlighting allowing local overrides
 set encoding=utf-8    " Set default encoding to UTF-8
 
-" automatically reload vimrc when it's saved
-au BufWritePost .vimrc so ~/.vimrc
-
 " set vim color level
 " http://vim.wikia.com/wiki/256_colors_in_vim
 set t_Co=256
@@ -63,6 +60,15 @@ set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
+"" Scrolling
+" Scroll before reaching the edge
+set scrolloff=8       " Number of lines from vertical edge to start scrolling
+set sidescrolloff=15  " Number of cols from horizontal edge to start scrolling
+set sidescroll=1      " Number of cols to scroll at a time
+
+"" Use space and shift space key to scroll up and down
+map <Space> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
+map <S-Space> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
 
 "" Wild settings
 
@@ -144,7 +150,7 @@ else
 "  :map <C-n> :tabnext<cr>
 "  :map <C-q> :tabclose<cr>
 
-  map <Tab> <Leader>be
+  map <Tab> <C-W><C-W>
 
   " STOP USING ARROW KEYS!!
   map <up> <nop>
