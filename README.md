@@ -209,6 +209,25 @@ Note the Ruby snippets can be found here:
 
 	MY_VIM_DIR/snipmate.vim/snippets/ruby.snippets
 
+### Fugitive
+
+<https://github.com/tpope/vim-fugitive>
+
+Git for vim:
+
+    :Gedit
+    :Gsplit
+    :Gvsplit
+    :Gtabedit
+    :Gstatus
+    :Gcommit
+    :Gmove
+    :Gremove
+    :Gblame
+    :Ggrep
+    :Gbrowse
+    :Git
+
 
 ### Exuberant CTags
 <https://github.com/vim-scripts/ctags.vim>
