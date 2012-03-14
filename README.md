@@ -256,13 +256,20 @@ Creates a tags file.  Add it to your **.gitignore**
 * You can use the 'stag' ex command, to open the tag in a new window. For example, the command ':stag func1' will open the func1 definition in a new window.
 * You can position the cursor over a tag name and then press Ctrl-W ]. This will open the tag location in a new window.
 
+**Effortless ctags with Git**
+
+<http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html>
+
+Use Git to create your Ctags.
+
+
 **References**  
 
 * <http://vim.wikia.com/wiki/Browsing_programs_with_tags>  
 * <http://paintincode.blogspot.com/2011/04/mac-vim-setup-for-python-programming.html>
 * <http://www.vim.org/scripts/script.php?script_id=610>  
 * <http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/>
-
+* <http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html>
 
 ## Pending plugins
 
