@@ -27,6 +27,15 @@ Record a macro into register 'a': `qa`
 Stop recording the macro: `q`  
 Get from register 'a': `@a`  
 
+Column select `Ctrl-v`  
+Replace the text in a column:
+
+    Select a column append new text to the end of each column,
+    then select the original column and delete it.
+    1. block-select (with Ctrl-V + cursor movement) 
+    2. A3<Esc> 
+    3. re-select with gv 
+    4. delete with d or <Del> k
 
 
 ## Modifications
