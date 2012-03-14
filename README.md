@@ -273,6 +273,27 @@ Creates a tags file.  Add it to your **.gitignore**
 * <http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/>
 
 
+## Align
+
+<https://github.com/vim-scripts/Align.git>
+
+Align your statements on equals, comments or some other declaration.
+So to align along the '=':
+
+    something = anther
+    s = b
+    forty = twenty
+
+Visually select and `:Align =`
+
+    something = anther
+    s         = b
+    forty     = twenty
+
+Note that you can add multiple separators: `:Align = # , (`
+
+
+
 ## Pending plugins
 
 Additional plugins that may be useful:
