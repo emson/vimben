@@ -27,6 +27,15 @@ Record a macro into register 'a': `qa`
 Stop recording the macro: `q`  
 Get from register 'a': `@a`  
 
+Column select `Ctrl-v`  
+Replace the text in a column:
+
+    Select a column append new text to the end of each column,
+    then select the original column and delete it.
+    1. block-select (with Ctrl-V + cursor movement) 
+    2. A3<Esc> 
+    3. re-select with gv 
+    4. delete with d or <Del> k
 
 
 ## Modifications
@@ -270,6 +279,27 @@ Use Git to create your Ctags.
 * <http://www.vim.org/scripts/script.php?script_id=610>  
 * <http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/>
 * <http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html>
+
+## Align
+
+<https://github.com/vim-scripts/Align.git>
+
+Align your statements on equals, comments or some other declaration.
+So to align along the '=':
+
+    something = anther
+    s = b
+    forty = twenty
+
+Visually select and `:Align =`
+
+    something = anther
+    s         = b
+    forty     = twenty
+
+Note that you can add multiple separators: `:Align = # , (`
+
+
 
 ## Pending plugins
 
