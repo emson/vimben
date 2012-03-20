@@ -26,6 +26,7 @@ Jump list: `:jumps`
 Record a macro into register 'a': `qa`  
 Stop recording the macro: `q`  
 Get from register 'a': `@a`  
+Quit all, including open windows: `:qall`
 
 Column select `Ctrl-v`  
 Replace the text in a column:
@@ -299,6 +300,23 @@ Visually select and `:Align =`
 
 Note that you can add multiple separators: `:Align = # , (`
 
+## ack.vim
+
+<https://github.com/mileszs/ack.vim.git>
+
+Add Ack search functionality to vim:
+
+    :Ack [options] {pattern} [{directory}]
+
+In the quick fix window:
+
+    o    to open (same as enter)
+    go   to preview file (open but maintain focus on ack.vim results)
+    t    to open in new tab
+    T    to open in new tab silently
+    v    to open in vertical split
+    gv   to open in vertical split silently
+    q    to close the quickfix window
 
 
 ## Pending plugins

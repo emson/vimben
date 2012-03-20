@@ -49,3 +49,6 @@
 [submodule "vimben/vim/bundle/Align"]
 	path = vimben/vim/bundle/Align
 	url = https://github.com/vim-scripts/Align.git
+[submodule "vimben/vim/bundle/ack.vim"]
+	path = vimben/vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
