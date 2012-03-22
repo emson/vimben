@@ -235,7 +235,12 @@ Just press **Tab** after typing a snippet keyword e.g.
 
 Note the Ruby snippets can be found here:
 
-	MY_VIM_DIR/snipmate.vim/snippets/ruby.snippets
+	MY_VIM_DIR/vimben/vim/bundle/snipmate.vim/snippets/ruby.snippets
+
+Also I have added a new custom snippets directory which is where you
+should add all your snippets:
+
+    MY_VIM_DIR/vimben/vim/snippets
 
 ### Fugitive
 
