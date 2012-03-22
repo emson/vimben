@@ -26,7 +26,8 @@ Jump list: `:jumps`
 Record a macro into register 'a': `qa`  
 Stop recording the macro: `q`  
 Get from register 'a': `@a`  
-Quit all, including open windows: `:qall`
+Quit all, including open windows: `:qall`  
+Show history of commands: `q:`  
 Resize a horizontal split window:
 
     Ctrl-w +
