@@ -1,8 +1,10 @@
 
-"set paths to pathogen
-set runtimepath=$HOME/.vim/vimben/vim/,$HOME/.vim/vimben/vim/snippets,$HOME/.vim/vimben/vim/core/vim-pathogen,$VIMRUNTIME
+" set paths to pathogen
+set runtimepath=$HOME/.vim/vimben/vim/,$HOME/.vim/vimben/vim/core/vim-pathogen,$VIMRUNTIME
 call pathogen#infect('$HOME/.vim/vimben/vim/bundle')
 
+" set plugin paths
+let g:snippets_dir = "$HOME/.vim/vimben/vim/snippets"
 
 "" Basic Setup
 
