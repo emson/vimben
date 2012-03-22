@@ -27,7 +27,25 @@ Record a macro into register 'a': `qa`
 Stop recording the macro: `q`  
 Get from register 'a': `@a`  
 Quit all, including open windows: `:qall`
+Resize a horizontal split window:
 
+    Ctrl-w +
+    10Ctrl-w -
+    :res +10
+
+Verticle split to fullscreen: `Ctrl-w |`  
+Resize a verticle split window:
+
+    Ctrl-w <
+    Ctrl-w >
+    :30winc <
+
+Horizontal split to fullscreen: `Ctrl-w _`  
+Equal width split panes: `Ctrl-w =`  
+Create a new window pane: `Ctrl-w n`  
+Quit a window pane without quitting the buffer: `Ctrl-w q`  
+Rotate a window pane to a different position: `Ctrl-w r`  
+Column select with mouse: `Ctrl + Alt + Cmd  then mouse click`  
 Column select `Ctrl-v`  
 Replace the text in a column:
 

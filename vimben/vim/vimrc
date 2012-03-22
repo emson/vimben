@@ -1,6 +1,6 @@
 
 "set paths to pathogen
-set runtimepath=$HOME/.vim/vimben/vim/,$HOME/.vim/vimben/vim/core/vim-pathogen,$VIMRUNTIME
+set runtimepath=$HOME/.vim/vimben/vim/,$HOME/.vim/vimben/vim/snippets,$HOME/.vim/vimben/vim/core/vim-pathogen,$VIMRUNTIME
 call pathogen#infect('$HOME/.vim/vimben/vim/bundle')
 
 
