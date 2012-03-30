@@ -60,8 +60,8 @@ Replace the text in a column:
 
 ## Modifications
 
-Added a simple 'Dark Room' toggle: `F1`  
-<http://paulrouget.com/e/vimdarkroom/>
+~~Added a simple 'Dark Room' toggle: `F1`  ~~
+~~<http://paulrouget.com/e/vimdarkroom/>~~
 
 
 ## Plugins
@@ -80,10 +80,10 @@ Updating the submodules:
 
 To remove a submodule you need to:
 
-* Delete the relevant line from the .gitmodules file.
+* Delete the relevant lines from the .gitmodules file.
 * Delete the relevant section from .git/config.
 * Run `git rm --cached path_to_submodule`  
-	NB: (no trailing slash).
+	**NB: (no trailing slash).**
 * Delete the unwanted directories:  
 	`rm -rf .vim/vimben/vim/bundle/my_module`
 * Commit the now untracked submodule files.
