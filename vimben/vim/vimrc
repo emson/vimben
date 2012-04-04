@@ -4,7 +4,7 @@ set runtimepath=$HOME/.vim/vimben/vim/,$HOME/.vim/vimben/vim/core/vim-pathogen,$
 call pathogen#infect('$HOME/.vim/vimben/vim/bundle')
 
 " set plugin paths
-let g:snippets_dir = "$HOME/.vim/vimben/vim/snippets"
+" let g:snippets_dir = "$HOME/.vim/vimben/vim/snippets"
 
 "" Basic Setup
 
@@ -21,8 +21,6 @@ set t_Co=256
 syntax enable
 set background=dark
 colorscheme vibrantink
-" colorscheme lucius
-" colorscheme ir_black
 
 
 "" Whitespace
@@ -34,19 +32,16 @@ set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 
-" if exists("g:enable_mvim_shift_arrow")
-"   let macvim_hig_shift_movement = 1 " mvim shift-arrow-keys
-" endif
 
-" required of 'endwise' plugin
+"" required of 'endwise' plugin
+
 filetype on
 filetype indent on
 filetype plugin on
-"autocmd BufEnter * lcd %:p:h " automatically cd's to the opened file
-"directory
 
 
-" List chars
+" " List chars
+
 set listchars=""                  " Reset the listchars
 set listchars=tab:\ \             " a tab should display as "  ", trailing whitespace as "."
 set listchars+=trail:.            " show trailing spaces as dots
@@ -63,20 +58,19 @@ set incsearch   " incremental searching
 set ignorecase  " searches are case insensitive...
 set smartcase   " ... unless they contain at least one capital letter
 
+
 "" Scrolling
-" Scroll before reaching the edge
+"" Scroll before reaching the edge
+
 set scrolloff=8       " Number of lines from vertical edge to start scrolling
 set sidescrolloff=15  " Number of cols from horizontal edge to start scrolling
 set sidescroll=1      " Number of cols to scroll at a time
 
-"" Use space and shift space key to scroll up and down
-" map <Space> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
-" map <S-Space> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
 
 "" Wild settings
 
-" TODO: Investigate the precise meaning of these settings
-" set wildmode=list:longest,list:full
+"" TODO: Investigate the precise meaning of these settings
+"" set wildmode=list:longest,list:full
 
 " Disable output and VCS files
 set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
@@ -92,6 +86,7 @@ set wildignore+=*.swp,*~,._*
 
 " Vim Powerline settings
 " set laststatus=2
+
 
 "" Key Mappings
 
@@ -129,18 +124,10 @@ map <Leader>w :%s/\s\+$//g<CR>
 " Insert the current directory into a command-line path
 "cmap <C-P> <C-R>=expand("%:p:h") . "/"
 
-if has("gui_macvim")
-  " Command-s to save
-  map <D-s> :w<space>
-  " Command-Shift-F on OSX
-  map <D-F> :Ack<space>
 
-else
-  " Control-Shift-F on other systems
-  " map <C-S-F> :Ack<space>
+" File tabs allways visible
+set showtabline=2
 
-  " Control + Shift for tabbing between non-gui tab panes
-  set showtabline=2               " File tabs allways visible
 "  :nmap <C-S-n> :tabprevious<cr>
 "  :nmap <C-n> :tabnext<cr>
 "  :nmap <C-t> :tabnew<cr>
@@ -149,22 +136,22 @@ else
 "  :map <C-n> :tabnext<cr>
 "  :map <C-q> :tabclose<cr>
 
-  map <Tab> <C-W><C-W>
+" Switch window panes round robin
+map <Tab> <C-W><C-W>
 
-  " STOP USING ARROW KEYS!!
-  map <up> <nop>
-  map <down> <nop>
-  " map <left> <nop>
-  " map <right> <nop>
-  imap <up> <nop>
-  imap <down> <nop>
-  imap <left> <nop>
-  imap <right> <nop>
+" STOP USING ARROW KEYS!!
+map <up> <nop>
+map <down> <nop>
+" map <left> <nop>
+" map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
-  " map arrow keys to previous / next buffer
-  noremap <left> :bp<CR>
-  noremap <right> :bn<CR>
-endif
+" map arrow keys to previous / next buffer
+noremap <left> :bp<CR>
+noremap <right> :bn<CR>
 
 
 if has("autocmd")
@@ -174,68 +161,8 @@ if has("autocmd")
 endif
 
 
-"" Plugin specific mappings
-" NERDTree
-
-" let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.class$', '\.o', '\~$']
-" let NERDTreeHijackNetrw = 0
-
-" augroup AuNERDTreeCmd
-" autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
-" autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
-
-" " If the parameter is a directory, cd into it
-" function s:CdIfDirectory(directory)
-"   let explicitDirectory = isdirectory(a:directory)
-"   let directory = explicitDirectory || empty(a:directory)
-
-"   if explicitDirectory
-"     exe "cd " . fnameescape(a:directory)
-"   endif
-
-"   " Allows reading from stdin
-"   " ex: git diff | mvim -R -
-"   if strlen(a:directory) == 0
-"     return
-"   endif
-
-"   if directory
-"     NERDTree
-"     wincmd p
-"     bd
-"   endif
-
-"   if explicitDirectory
-"     wincmd p
-"   endif
-" endfunction
-
-" " NERDTree utility function
-" function s:UpdateNERDTree(...)
-"   let stay = 0
-
-"   if(exists("a:1"))
-"     let stay = a:1
-"   end
-
-"   if exists("t:NERDTreeBufName")
-"     let nr = bufwinnr(t:NERDTreeBufName)
-"     if nr != -1
-"       exe nr . "wincmd w"
-"       exe substitute(mapcheck("R"), "<CR>", "", "")
-"       if !stay
-"         wincmd p
-"       end
-"     endif
-"   endif
-
-"   if exists(":CommandTFlush") == 2
-"     CommandTFlush
-"   endif
-" endfunction
-
 " Map leader key n to open NERDTree
-map <Leader>n :NERDTreeToggle<CR>
+#map <Leader>n :NERDTreeToggle<CR>
 
 
 "" Functions
@@ -248,26 +175,6 @@ function! s:setupWrapping()
   set nolist
 endfunction
 
-""" FocusMode
-" http://paulrouget.com/e/vimdarkroom/
-" function! ToggleFocusMode()
-"   if (&foldcolumn != 12)
-"     set laststatus=0
-"     set numberwidth=10
-"     set foldcolumn=12
-"     set noruler
-"     hi FoldColumn ctermbg=none
-"     hi LineNr ctermfg=0 ctermbg=none
-"     hi NonText ctermfg=0
-"   else
-"     set laststatus=2
-"     set numberwidth=4
-"     set foldcolumn=0
-"     set ruler
-"     execute 'colorscheme ' . g:colors_name
-"   endif
-" endfunc
-" nnoremap <F1> :call ToggleFocusMode()<cr>
 
 "" File types
 
@@ -285,4 +192,6 @@ au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
 set backupdir=~/.vim/_backup//    " where to put backup files.
 set directory=~/.vim/_temp//      " where to put swap files.
+
+
 

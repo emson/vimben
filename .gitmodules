@@ -1,51 +1,9 @@
 [submodule "vimben/vim/core/vim-pathogen"]
 	path = vimben/vim/core/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vimben/vim/bundle/vim-vividchalk"]
-	path = vimben/vim/bundle/vim-vividchalk
-	url = https://github.com/tpope/vim-vividchalk.git
-[submodule "vimben/vim/bundle/vim-colors-solarized"]
-	path = vimben/vim/bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "vimben/vim/bundle/nerdtree"]
-	path = vimben/vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vimben/vim/bundle/vim-markdown"]
-	path = vimben/vim/bundle/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
-[submodule "vimben/vim/bundle/vim-rails"]
-	path = vimben/vim/bundle/vim-rails
-	url = https://github.com/tpope/vim-rails.git
-[submodule "vimben/vim/bundle/vim-surround"]
-	path = vimben/vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
 [submodule "vimben/vim/bundle/syntastic"]
 	path = vimben/vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic.git
 [submodule "vimben/vim/bundle/vim-endwise"]
 	path = vimben/vim/bundle/vim-endwise
 	url = https://github.com/tpope/vim-endwise.git
-[submodule "vimben/vim/bundle/vim-commentary"]
-	path = vimben/vim/bundle/vim-commentary
-	url = https://github.com/tpope/vim-commentary.git
-[submodule "vimben/vim/bundle/ctrlp.vim"]
-	path = vimben/vim/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim.git
-[submodule "vimben/vim/bundle/snipmate.vim"]
-	path = vimben/vim/bundle/snipmate.vim
-	url = https://github.com/msanders/snipmate.vim.git
-[submodule "vimben/vim/bundle/vim_irblack"]
-	path = vimben/vim/bundle/vim_irblack
-	url = https://github.com/wgibbs/vim-irblack.git
-[submodule "vimben/vim/bundle/ctags.vim"]
-	path = vimben/vim/bundle/ctags.vim
-	url = https://github.com/vim-scripts/ctags.vim.git
-[submodule "vimben/vim/bundle/vim-fugitive"]
-	path = vimben/vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule "vimben/vim/bundle/Align"]
-	path = vimben/vim/bundle/Align
-	url = https://github.com/vim-scripts/Align.git
-[submodule "vimben/vim/bundle/ack.vim"]
-	path = vimben/vim/bundle/ack.vim
-	url = https://github.com/mileszs/ack.vim.git
