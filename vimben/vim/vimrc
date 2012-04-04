@@ -162,7 +162,7 @@ endif
 
 
 " Map leader key n to open NERDTree
-#map <Leader>n :NERDTreeToggle<CR>
+" map <Leader>n :NERDTreeToggle<CR>
 
 
 "" Functions
