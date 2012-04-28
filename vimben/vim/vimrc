@@ -34,9 +34,10 @@ set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 
-if exists("g:enable_mvim_shift_arrow")
-  let macvim_hig_shift_movement = 1 " mvim shift-arrow-keys
-endif
+" if exists("g:enable_mvim_shift_arrow")
+"   let macvim_hig_shift_movement = 1 " mvim shift-arrow-keys
+" endif
+
 " required of 'endwise' plugin
 filetype on
 filetype indent on
@@ -69,8 +70,8 @@ set sidescrolloff=15  " Number of cols from horizontal edge to start scrolling
 set sidescroll=1      " Number of cols to scroll at a time
 
 "" Use space and shift space key to scroll up and down
-map <Space> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
-map <S-Space> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
+" map <Space> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
+" map <S-Space> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
 
 "" Wild settings
 
@@ -90,7 +91,7 @@ set wildignore+=vendor/gems/*,vendor/cache/*,.bundle/*,.sass-cache/*
 set wildignore+=*.swp,*~,._*
 
 " Vim Powerline settings
-set laststatus=2
+" set laststatus=2
 
 "" Key Mappings
 
@@ -113,24 +114,20 @@ nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
 nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
 
 " Map the arrow keys to be based on display lines, not physical lines
-map <Down> gj
-map <Up> gk
+" map <Down> gj
+" map <Up> gk
 
 " Toggle hlsearch with <leader>hs
 nmap <leader>hs :set hlsearch! hlsearch?<CR>
 
 " Adjust viewports to the same size
-map <Leader>= <C-w>=
+" map <Leader>= <C-w>=
 
 " Remove trailing whitespace
 map <Leader>w :%s/\s\+$//g<CR>
 
 " Insert the current directory into a command-line path
 "cmap <C-P> <C-R>=expand("%:p:h") . "/"
-
-" Ctrl-s to save
-noremap <C-S> :w<CR>
-noremap <C-S> <ESC>:w<CR><Insert>
 
 if has("gui_macvim")
   " Command-s to save
@@ -253,24 +250,24 @@ endfunction
 
 """ FocusMode
 " http://paulrouget.com/e/vimdarkroom/
-function! ToggleFocusMode()
-  if (&foldcolumn != 12)
-    set laststatus=0
-    set numberwidth=10
-    set foldcolumn=12
-    set noruler
-    hi FoldColumn ctermbg=none
-    hi LineNr ctermfg=0 ctermbg=none
-    hi NonText ctermfg=0
-  else
-    set laststatus=2
-    set numberwidth=4
-    set foldcolumn=0
-    set ruler
-    execute 'colorscheme ' . g:colors_name
-  endif
-endfunc
-nnoremap <F1> :call ToggleFocusMode()<cr>
+" function! ToggleFocusMode()
+"   if (&foldcolumn != 12)
+"     set laststatus=0
+"     set numberwidth=10
+"     set foldcolumn=12
+"     set noruler
+"     hi FoldColumn ctermbg=none
+"     hi LineNr ctermfg=0 ctermbg=none
+"     hi NonText ctermfg=0
+"   else
+"     set laststatus=2
+"     set numberwidth=4
+"     set foldcolumn=0
+"     set ruler
+"     execute 'colorscheme ' . g:colors_name
+"   endif
+" endfunc
+" nnoremap <F1> :call ToggleFocusMode()<cr>
 
 "" File types
 
@@ -288,3 +285,4 @@ au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
 
 set backupdir=~/.vim/_backup//    " where to put backup files.
 set directory=~/.vim/_temp//      " where to put swap files.
+

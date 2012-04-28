@@ -28,9 +28,6 @@
 [submodule "vimben/vim/bundle/vim-commentary"]
 	path = vimben/vim/bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule "vimben/vim/bundle/vim-powerline"]
-	path = vimben/vim/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "vimben/vim/bundle/ctrlp.vim"]
 	path = vimben/vim/bundle/ctrlp.vim
 	url = https://github.com/kien/ctrlp.vim.git
