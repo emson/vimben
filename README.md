@@ -5,14 +5,33 @@ My personal Vim installation, which is basically a customised fork of the [Janus
 
 ## Installation
 
+### Installing Vim from source on OSX
+
+Use Mercural to download the Vim source:
+
+  
+Now configure Vim. Please note that if you have tried to configure Vim
+previously you will need to do a clean:
+
+    make distclean
+
+Configuration and Compilation:
+
+    ./configure CFLAGS="-arch x86_64" CXXFLAGS="-arch x86_64" \
+    --with-features=huge  --enable-multibyte --with-tlib=ncurses \
+    --enable-pythoninterp --enable-rubyinterp 
+
+    make
+    make install
+
+### VimBen set up
+
 To install VimBen, please use this [automatic
 installer](https://github.com/emson/vimben/blob/master/bootstrap.sh)
 , which backups up any Vim files found in your home folder and installs
 VimBen.
 
-```bash
-$ curl -Lo- https://raw.github.com/emson/vimben/master/bootstrap.sh | bash
-```
+	curl -Lo- https://raw.github.com/emson/vimben/master/bootstrap.sh | bash
 
 ## Useful Commands
 
@@ -64,11 +83,11 @@ Replace the text in a column:
 ~~<http://paulrouget.com/e/vimdarkroom/>~~
 
 
-## Plugins
+## Plugins & Submodules
 
 Plugins are generally added using Git Submodules. Please add and remove them like so:
 
-**Git Submodules**
+###Git Submodules
 
 Add a submodule:
 
