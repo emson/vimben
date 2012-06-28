@@ -361,6 +361,13 @@ In the quick fix window:
     gv   to open in vertical split silently
     q    to close the quickfix window
 
+## Numbers.vim
+<https://github.com/myusuf3/numbers.vim>
+
+In navigation mode the current cursor is set at 0 making it easy to
+work out how many lines to delete etc.  
+In insert mode the line numbers revert to normal line numbers.
+
 
 ## Pending plugins
 
