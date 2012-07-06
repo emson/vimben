@@ -2,7 +2,8 @@
 " set paths to pathogen
 set runtimepath=$HOME/.vim/vimben/vim/,$HOME/.vim/vimben/vim/core/vim-pathogen,$VIMRUNTIME
 call pathogen#infect('$HOME/.vim/vimben/vim/bundle')
-
+call pathogen#helptags()
+.
 " set plugin paths
 let g:snippets_dir = "$HOME/.vim/vimben/vim/snippets"
 
@@ -91,7 +92,7 @@ set wildignore+=vendor/gems/*,vendor/cache/*,.bundle/*,.sass-cache/*
 set wildignore+=*.swp,*~,._*
 
 " Vim Powerline settings
-" set laststatus=2
+set laststatus=2   " Always show the statusline
 
 "" Key Mappings
 

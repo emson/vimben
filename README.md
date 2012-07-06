@@ -368,6 +368,10 @@ In navigation mode the current cursor is set at 0 making it easy to
 work out how many lines to delete etc.  
 In insert mode the line numbers revert to normal line numbers.
 
+## Vim-jst
+<https://github.com/briancollins/vim-jst.git>
+
+A Vim plugin for highlighting and indenting JST/EJS syntax.
 
 ## Pending plugins
 
