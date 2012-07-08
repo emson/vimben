@@ -373,6 +373,20 @@ In insert mode the line numbers revert to normal line numbers.
 
 A Vim plugin for highlighting and indenting JST/EJS syntax.
 
+## Vim-Coffee-Script
+<https://github.com/kchmck/vim-coffee-script/>
+
+This project adds CoffeeScript support to the vim editor. It handles syntax, indenting, compiling, and more. Also included is an eco syntax and support for CoffeeScript in Haml and HTML.
+
+The full signature of the command is:
+
+    :[silent] CoffeeMake[!] [COFFEE-OPTIONS]...
+
+By default, CoffeeMake shows all compiler output and jumps to the first line reported as an error by coffee:
+
+    :CoffeeMake
+
+
 ## Pending plugins
 
 Additional plugins that may be useful:

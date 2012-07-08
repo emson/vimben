@@ -58,3 +58,6 @@
 [submodule "vimben/vim/bundle/vim-jst"]
 	path = vimben/vim/bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
+[submodule "vimben/vim/bundle/vim-coffee-script"]
+	path = vimben/vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
