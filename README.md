@@ -387,6 +387,22 @@ By default, CoffeeMake shows all compiler output and jumps to the first line rep
     :CoffeeMake
 
 
+## Rainbow-parentheses.vim
+<https://github.com/kien/rainbow_parentheses.vim.git>  
+
+Plugin to highlight nested parentheses differently.
+Commands:
+
+    :RainbowParenthesesToggle       " Toggle it on/off
+    :RainbowParenthesesLoadRound    " (), the default when toggling
+    :RainbowParenthesesLoadSquare   " []
+    :RainbowParenthesesLoadBraces   " {}
+    :RainbowParenthesesLoadChevrons " <>
+
+    
+
+
+
 ## Pending plugins
 
 Additional plugins that may be useful:

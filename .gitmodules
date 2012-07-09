@@ -61,3 +61,6 @@
 [submodule "vimben/vim/bundle/vim-coffee-script"]
 	path = vimben/vim/bundle/vim-coffee-script
 	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "vimben/vim/bundle/rainbow_parentheses.vim"]
+	path = vimben/vim/bundle/rainbow_parentheses.vim
+	url = https://github.com/kien/rainbow_parentheses.vim.git
