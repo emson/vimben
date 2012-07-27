@@ -76,6 +76,11 @@ Replace the text in a column:
     3. re-select with gv 
     4. delete with d or <Del> k
 
+Use vim bindings in the console (<http://blog.siyelo.com/vim-tips-part-i>):
+
+    $ set -o vi
+    or back
+    $ set -o emacs
 
 ## Modifications
 

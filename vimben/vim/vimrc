@@ -150,7 +150,8 @@ else
 "  :map <C-n> :tabnext<cr>
 "  :map <C-q> :tabclose<cr>
 
-  map <Tab> <C-W><C-W>
+  map <Tab> <C-W>
+  map <Tab><Tab> <C-W><C-W>
 
   " STOP USING ARROW KEYS!!
   map <up> <nop>
