@@ -405,6 +405,10 @@ Commands:
     :RainbowParenthesesLoadChevrons " <>
 
     
+## Vim Puppet
+Add syntax highlighting etc. for puppet.
+
+<https://github.com/rodjek/vim-puppet/>
 
 
 
