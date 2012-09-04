@@ -406,11 +406,30 @@ Commands:
 
     
 ## Vim Puppet
+<https://github.com/rodjek/vim-puppet/>
 Add syntax highlighting etc. for puppet.
 
-<https://github.com/rodjek/vim-puppet/>
 
+## ZenCoding
+<https://github.com/mattn/zencoding-vim>
+A simple set of commands for generating HTML.
 
+In `index.html` type:
+
+    html:5
+
+Then type "," (Ctrl + y + ','), you should see:
+
+    <!DOCTYPE HTML>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        _
+    </body>
+    </html
 
 ## Pending plugins
 
