@@ -34,6 +34,7 @@
 [submodule "vimben/vim/bundle/snipmate.vim"]
 	path = vimben/vim/bundle/snipmate.vim
 	url = https://github.com/msanders/snipmate.vim.git
+  ignore = dirty
 [submodule "vimben/vim/bundle/vim_irblack"]
 	path = vimben/vim/bundle/vim_irblack
 	url = https://github.com/wgibbs/vim-irblack.git
@@ -46,9 +47,11 @@
 [submodule "vimben/vim/bundle/Align"]
 	path = vimben/vim/bundle/Align
 	url = https://github.com/vim-scripts/Align.git
+  ignore = dirty
 [submodule "vimben/vim/bundle/ack.vim"]
 	path = vimben/vim/bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
+  ignore = dirty
 [submodule "vimben/vim/bundle/numbers.vim"]
 	path = vimben/vim/bundle/numbers.vim
 	url = https://github.com/myusuf3/numbers.vim.git
