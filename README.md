@@ -414,6 +414,11 @@ Add syntax highlighting etc. for puppet.
 <https://github.com/mattn/zencoding-vim>
 A simple set of commands for generating HTML.
 
+For more examples see:
+
+* <http://coding.smashingmagazine.com/2009/11/21/zen-coding-a-new-way-to-write-html-code/>
+* <https://raw.github.com/mattn/zencoding-vim/master/TUTORIAL>
+
 In `index.html` type:
 
     html:5
@@ -430,6 +435,22 @@ Then type "," (Ctrl + y + ','), you should see:
         _
     </body>
     </html
+
+You can also apply HTML to existing text, by using visual select to select this text, from the bottom type `v[`:
+
+    test1
+    test2
+    test3
+
+Now type `Ctrl+y+,` and type in your zencode tag: `ul>li*` - Remember the `*` as this will apply the text to each  `<li></li>` element. Producting:
+
+    <ul>
+      <li>test1</li>
+      <li>test2</li>
+      <li>test3</li>
+    </ul>
+
+
 
 ## Pending plugins
 
