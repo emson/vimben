@@ -73,3 +73,6 @@
 [submodule "vimben/vim/bundle/zencoding-vim"]
 	path = vimben/vim/bundle/zencoding-vim
 	url = https://github.com/mattn/zencoding-vim.git
+[submodule "vimben/vim/bundle/vim-multiple-cursors"]
+	path = vimben/vim/bundle/vim-multiple-cursors
+	url = git://github.com/terryma/vim-multiple-cursors.git

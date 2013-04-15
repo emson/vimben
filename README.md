@@ -9,6 +9,7 @@ My personal Vim installation, which is basically a customised fork of the [Janus
 
 Use Mercural to download the Vim source:
 
+* <http://www.vim.org/mercurial.php>
   
 Now configure Vim. Please note that if you have tried to configure Vim
 previously you will need to do a clean:
@@ -285,6 +286,11 @@ Git for vim:
     :Ggrep
     :Gbrowse
     :Git
+
+### Vim Multiple Cursors
+
+<https://github.com/terryma/vim-multiple-cursors>
+
 
 
 ### Exuberant CTags
