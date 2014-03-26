@@ -456,6 +456,12 @@ Now type `Ctrl+y+,` and type in your zencode tag: `ul>li*` - Remember the `*` as
       <li>test3</li>
     </ul>
 
+## Vim Airline
+
+Lean & mean status/tabline for vim that's light as air.
+
+* <https://github.com/bling/vim-airline>
+
 
 
 ## Pending plugins

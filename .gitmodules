@@ -76,3 +76,6 @@
 [submodule "vimben/vim/bundle/vim-multiple-cursors"]
 	path = vimben/vim/bundle/vim-multiple-cursors
 	url = git://github.com/terryma/vim-multiple-cursors.git
+[submodule "/Users/BEmson1/.vim/vimben/vim/bundle/vim-airline"]
+	path = /Users/BEmson1/.vim/vimben/vim/bundle/vim-airline
+	url = https://github.com/bling/vim-airline

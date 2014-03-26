@@ -1,7 +1,7 @@
 
 " set paths to pathogen
 set runtimepath=$HOME/.vim/vimben/vim/,$HOME/.vim/vimben/vim/core/vim-pathogen,$VIMRUNTIME
-call pathogen#infect('$HOME/.vim/vimben/vim/bundle')
+call pathogen#infect('$HOME/.vim/vimben/vim/bundle/{}')
 call pathogen#helptags()
 .
 " set plugin paths
@@ -25,6 +25,9 @@ colorscheme vibrantink
 " colorscheme lucius
 " colorscheme ir_black
 set guifont=Monaco:h14
+highlight clear VertSplit
+highlight VertSplit ctermbg=darkgray
+set fillchars=
 
 "" Whitespace
 
@@ -141,7 +144,7 @@ else
   " map <C-S-F> :Ack<space>
 
   " Control + Shift for tabbing between non-gui tab panes
-  set showtabline=2               " File tabs allways visible
+  set showtabline=1    " File tabs allways visible if set to 2
 "  :nmap <C-S-n> :tabprevious<cr>
 "  :nmap <C-n> :tabnext<cr>
 "  :nmap <C-t> :tabnew<cr>
