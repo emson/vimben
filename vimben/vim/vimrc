@@ -25,6 +25,7 @@ colorscheme vibrantink
 " colorscheme lucius
 " colorscheme ir_black
 set guifont=Monaco:h14
+" change side bar colour
 highlight clear VertSplit
 highlight VertSplit ctermbg=darkgray
 set fillchars=
@@ -93,9 +94,6 @@ set wildignore+=vendor/gems/*,vendor/cache/*,.bundle/*,.sass-cache/*
 
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
-
-" Vim Powerline settings
-set laststatus=2   " Always show the statusline
 
 "" Key Mappings
 
