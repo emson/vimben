@@ -9,6 +9,7 @@ My personal Vim installation, which is basically a customised fork of the [Janus
 
 Use Mercural to download the Vim source:
 
+* <http://www.vim.org/mercurial.php>
   
 Now configure Vim. Please note that if you have tried to configure Vim
 previously you will need to do a clean:
@@ -286,6 +287,11 @@ Git for vim:
     :Gbrowse
     :Git
 
+### Vim Multiple Cursors
+
+<https://github.com/terryma/vim-multiple-cursors>
+
+
 
 ### Exuberant CTags
 <https://github.com/vim-scripts/ctags.vim>
@@ -449,6 +455,25 @@ Now type `Ctrl+y+,` and type in your zencode tag: `ul>li*` - Remember the `*` as
       <li>test2</li>
       <li>test3</li>
     </ul>
+
+## Vim-Airline
+
+Lean & mean status/tabline for vim that's light as air.
+
+* <https://github.com/bling/vim-airline>
+
+
+## Vim-Multiple-cursors
+
+Edit text in multiple places by positioning multiple cursors on your text.
+
+* <https://github.com/terryma/vim-multiple-cursors>
+
+In `normal mode` find a piece of text and hit `Ctrl-n`, this will highlight the current word in `visual mode` pressing `Ctrl-n` again will highlight the next occurrence of that word, placing the virtual cursor at the end of  that word.
+
+`Ctrl-p` will remove the current  virtual cursor and go back to the previous cursor location
+
+`Ctrl-x` will remove the current virtual cursor and will jump forward to the next selection.
 
 
 

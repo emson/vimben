@@ -1,7 +1,7 @@
 
 " set paths to pathogen
 set runtimepath=$HOME/.vim/vimben/vim/,$HOME/.vim/vimben/vim/core/vim-pathogen,$VIMRUNTIME
-call pathogen#infect('$HOME/.vim/vimben/vim/bundle')
+call pathogen#infect('$HOME/.vim/vimben/vim/bundle/{}')
 call pathogen#helptags()
 .
 " set plugin paths
@@ -25,6 +25,10 @@ colorscheme vibrantink
 " colorscheme lucius
 " colorscheme ir_black
 set guifont=Monaco:h14
+" change side bar colour
+highlight clear VertSplit
+highlight VertSplit ctermbg=darkgray
+set fillchars=
 
 "" Whitespace
 
@@ -91,9 +95,6 @@ set wildignore+=vendor/gems/*,vendor/cache/*,.bundle/*,.sass-cache/*
 " Disable temp and backup files
 set wildignore+=*.swp,*~,._*
 
-" Vim Powerline settings
-set laststatus=2   " Always show the statusline
-
 "" Key Mappings
 
 " remap leader key from '\' to ','
@@ -141,7 +142,7 @@ else
   " map <C-S-F> :Ack<space>
 
   " Control + Shift for tabbing between non-gui tab panes
-  set showtabline=2               " File tabs allways visible
+  set showtabline=1    " File tabs allways visible if set to 2
 "  :nmap <C-S-n> :tabprevious<cr>
 "  :nmap <C-n> :tabnext<cr>
 "  :nmap <C-t> :tabnew<cr>
@@ -246,7 +247,7 @@ map <Leader>n :NERDTreeToggle<CR>
 function! s:setupWrapping()
   set wrap
   set linebreak
-  set textwidth=72
+  " set textwidth=80
   set nolist
 endfunction
 
@@ -280,7 +281,7 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:
 au BufNewFile,BufRead *.json set ft=javascript
 
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=79
+au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=80
 
 
 "" Backup and swap files
