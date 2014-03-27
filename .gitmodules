@@ -55,9 +55,6 @@
 [submodule "vimben/vim/bundle/numbers.vim"]
 	path = vimben/vim/bundle/numbers.vim
 	url = https://github.com/myusuf3/numbers.vim.git
-[submodule "vimben/vim/bundle/vim-powerline"]
-	path = vimben/vim/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "vimben/vim/bundle/vim-jst"]
 	path = vimben/vim/bundle/vim-jst
 	url = https://github.com/briancollins/vim-jst.git
