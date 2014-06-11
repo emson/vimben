@@ -384,7 +384,15 @@ In insert mode the line numbers revert to normal line numbers.
 <https://github.com/jplaut/vim-arduino-ino>
 
 Ensure **ino** is installed: <http://inotool.org/>  
-Using Python: `pip install ino`
+Using Python: `pip install ino`  
+
+Install Picocom for serial control with Arduino: `brew install picocom`
+Picocom commands can be run from `ino` e.g.:
+
+    ino serial # start serial monitor
+    
+    Ctrl+a Ctrl+x # to quit serial monitor
+    Ctrl+a Ctrl+a Ctrl+x # to quit serial monitor from tmux
 
 
 Vim Arduino Ino can be run using the following keys:
@@ -398,6 +406,7 @@ Also install `arduino-vim` syntax higlighting: <http://www.vim.org/scripts/scrip
 Put the downloaded syntax file into your `/bundle` directory e.g.
 
     bundle/vim-arduino-syntax/syntax/arduino.vim
+
 
 More notes: <http://fousa.be/blog/vim-arduino>
 
