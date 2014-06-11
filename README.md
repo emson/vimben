@@ -379,6 +379,28 @@ In navigation mode the current cursor is set at 0 making it easy to
 work out how many lines to delete etc.  
 In insert mode the line numbers revert to normal line numbers.
 
+## Vim Arduino Ino
+
+<https://github.com/jplaut/vim-arduino-ino>
+
+Ensure **ino** is installed: <http://inotool.org/>  
+Using Python: `pip install ino`
+
+
+Vim Arduino Ino can be run using the following keys:
+
+    <Leader>ac - Compile the current sketch.
+    <Leader>ad - Compile and deploy the current sketch.
+    <Leader>as - Open a serial port in screen.
+
+
+Also install `arduino-vim` syntax higlighting: <http://www.vim.org/scripts/script.php?script_id=2654>
+Put the downloaded syntax file into your `/bundle` directory e.g.
+
+    bundle/vim-arduino-syntax/syntax/arduino.vim
+
+More notes: <http://fousa.be/blog/vim-arduino>
+
 ## Vim-jst
 <https://github.com/briancollins/vim-jst.git>
 

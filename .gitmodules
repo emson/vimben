@@ -76,3 +76,6 @@
 [submodule "/Users/BEmson1/.vim/vimben/vim/bundle/vim-airline"]
 	path = /Users/BEmson1/.vim/vimben/vim/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
+[submodule "vimben/vim/bundle/vim-arduino-ino"]
+	path = vimben/vim/bundle/vim-arduino-ino
+	url = https://github.com/jplaut/vim-arduino-ino.git

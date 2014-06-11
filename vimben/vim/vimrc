@@ -280,6 +280,10 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json set ft=javascript
 
+" Arduino file syntax
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
+
 " make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=80
 
