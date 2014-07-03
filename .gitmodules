@@ -79,3 +79,6 @@
 [submodule "vimben/vim/bundle/vim-arduino-ino"]
 	path = vimben/vim/bundle/vim-arduino-ino
 	url = https://github.com/jplaut/vim-arduino-ino.git
+[submodule "vimben/vim/bundle/dash.vim"]
+	path = vimben/vim/bundle/dash.vim
+	url = https://github.com/rizzatti/dash.vim.git

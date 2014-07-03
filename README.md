@@ -95,9 +95,11 @@ Plugins are generally added using Git Submodules. Please add and remove them lik
 
 ###Git Submodules
 
-Add a submodule:
+Add a submodule, into your directory:
 
     git submodule add MY_URL MY_PATH
+    e.g.
+    .vim$> git submodule add https://github.com/rizzatti/dash.vim.git ./vimben/bundle/dash.vim
 
 Updating the submodules:
 
@@ -506,6 +508,36 @@ In `normal mode` find a piece of text and hit `Ctrl-n`, this will highlight the 
 
 `Ctrl-x` will remove the current virtual cursor and will jump forward to the next selection.
 
+
+## Dash.vim
+
+Access Dash API documents from the Vim. 
+
+* <https://github.com/rizzatti/dash.vim>
+
+    :Dash
+
+    Will search for the word under the cursor in the docset corresponding to
+    the current filetype.
+
+    :Dash printf
+
+    Will search for the word 'printf' in the docset corresponding to the
+    current filetype.
+
+    :Dash setTimeout javascript
+
+    Will search for the word 'setTimeout' in the 'javascript' docset.
+
+    Tip: You can use <Tab> to complete the keyword names.
+
+    :Dash!
+
+    Will search for the word under the cursor in all docsets (globally).
+
+    :Dash! func
+
+    Will search for 'func' in all docsets.
 
 
 ## Pending plugins
