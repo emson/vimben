@@ -280,6 +280,9 @@ au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:
 " Treat JSON files like JavaScript
 au BufNewFile,BufRead *.json set ft=javascript
 
+" Treat xml.erb files like xml
+au BufNewFile,BufRead *.xml.erb set ft=xml
+
 " Arduino file syntax
 au BufRead,BufNewFile *.pde set filetype=arduino
 au BufRead,BufNewFile *.ino set filetype=arduino
