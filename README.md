@@ -95,15 +95,21 @@ Plugins are generally added using Git Submodules. Please add and remove them lik
 
 ###Git Submodules
 
+#### Add a submodule
+
 Add a submodule, into your directory:
 
     git submodule add MY_URL MY_PATH
     e.g.
     .vim$> git submodule add https://github.com/rizzatti/dash.vim.git ./vimben/bundle/dash.vim
 
+#### Updating submodules
+
 Updating the submodules:
 
     git submodule update --init
+
+#### Remove a submodule
 
 To remove a submodule you need to:
 
