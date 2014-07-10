@@ -101,7 +101,7 @@ Add a submodule, into your directory:
 
     git submodule add MY_URL MY_PATH
     e.g.
-    .vim$> git submodule add https://github.com/rizzatti/dash.vim.git ./vimben/bundle/dash.vim
+    .vimgit submodule add https://github.com/mattn/emmet-vim.git ./vimben/vim/bundle/emmet-vim
 
 #### Updating submodules
 
@@ -455,8 +455,11 @@ Commands:
 Add syntax highlighting etc. for puppet.
 
 
-## ZenCoding
-<https://github.com/mattn/zencoding-vim>
+## Emmet-vim (ZenCoding)
+* ~~<https://github.com/mattn/zencoding-vim>~~  
+* <https://github.com/mattn/emmet-vim>
+
+
 A simple set of commands for generating HTML.
 
 For more examples see:
