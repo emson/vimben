@@ -82,3 +82,6 @@
 [submodule "vimben/vim/bundle/emmet-vim"]
 	path = vimben/vim/bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
+[submodule "vimben/vim/bundle/vim-obsession"]
+	path = vimben/vim/bundle/vim-obsession
+	url = https://github.com/tpope/vim-obsession.git

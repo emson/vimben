@@ -101,7 +101,7 @@ Add a submodule, into your directory:
 
     git submodule add MY_URL MY_PATH
     e.g.
-    .vimgit submodule add https://github.com/mattn/emmet-vim.git ./vimben/vim/bundle/emmet-vim
+    .vim$ git submodule add https://github.com/mattn/emmet-vim.git ./vimben/vim/bundle/emmet-vim
 
 #### Updating submodules
 
@@ -295,11 +295,6 @@ Git for vim:
     :Gbrowse
     :Git
 
-### Vim Multiple Cursors
-
-<https://github.com/terryma/vim-multiple-cursors>
-
-
 
 ### Exuberant CTags
 <https://github.com/vim-scripts/ctags.vim>
@@ -459,7 +454,6 @@ Add syntax highlighting etc. for puppet.
 * ~~<https://github.com/mattn/zencoding-vim>~~  
 * <https://github.com/mattn/emmet-vim>
 
-
 A simple set of commands for generating HTML.
 
 For more examples see:
@@ -547,6 +541,12 @@ Access Dash API documents from the Vim.
     :Dash! func
 
     Will search for 'func' in all docsets.
+
+
+## Vim-Obsession
+<https://github.com/tpope/vim-obsession>
+
+Used by Tmux-resurrect to save the current Vim session
 
 
 ## Pending plugins
