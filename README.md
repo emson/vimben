@@ -492,6 +492,20 @@ Now type `Ctrl+y+,` and type in your zencode tag: `ul>li*` - Remember the `*` as
       <li>test3</li>
     </ul>
 
+## Vim-Elixir
+
+<https://github.com/elixir-lang/vim-elixir>
+
+Elixir support for vim. This plugin also adds support for Elixir's templating language, EEx.
+
+Features included so far:
+
+    Syntax highlighting for Elixir and EEx
+    Filetype detection for .ex, .exs and .eex files
+    Automatic indentation
+
+
+
 ## Vim-Airline
 
 Lean & mean status/tabline for vim that's light as air.
