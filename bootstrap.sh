@@ -1,6 +1,4 @@
-# Source RVM so vimben .rvmrc takes effect
-[[ -s /usr/local/rvm/scripts/rvm ]] && source /usr/local/rvm/scripts/rvm
-[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+# Bootstrap file to set up and configure Vim
 
 # Source Rbenv so vimben .rbenv-version takes effect
 if ! type rbenv &> /dev/null; then

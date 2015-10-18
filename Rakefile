@@ -22,8 +22,11 @@ task :folders do
   end
 end
 
+task :git_cloning do
+  system "git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim"
+end
 
-task :install => [:folders, :link_vim_conf_files] do
+task :install => [:folders, :link_vim_conf_files, :git_cloning] do
   # Dummy task, real work is done with the hooks.
 end
 
@@ -50,7 +53,7 @@ end
 
 desc "Install or Update VimBen."
 task :default do
-  sh "rake update"
+  # sh "rake update"
   sh "rake install"
 end
 

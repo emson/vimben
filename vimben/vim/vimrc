@@ -1,37 +1,236 @@
+""" ------------------------------------
+""" Ben's Vim Configuration ============
+""" ------------------------------------
 
-" set paths to pathogen
-set runtimepath=$HOME/.vim/vimben/vim/,$HOME/.vim/vimben/vim/core/vim-pathogen,$VIMRUNTIME
-call pathogen#infect('$HOME/.vim/vimben/vim/bundle/{}')
-call pathogen#helptags()
-.
-" set plugin paths
-let g:snippets_dir = "$HOME/.vim/vimben/vim/snippets"
+" remap leader key from '\' to ','
+let mapleader = ","
 
-"" Basic Setup
 
-set nocompatible      " Use vim, no vi defaults
-set number            " Show line numbers
-set ruler             " Show line and column number
-syntax enable         " Turn on syntax highlighting allowing local overrides
-set encoding=utf-8    " Set default encoding to UTF-8
+""" Setup Vundle =======================
+set nocompatible " required for Vundle
+filetype off     " required for Vundle
 
-" set vim color level
-" http://vim.wikia.com/wiki/256_colors_in_vim
-set t_Co=256
-" set theme and color scheme
-syntax enable
+" Initialize Vundle
+" set the runtime path to include Vundle and initialize
+set rtp+=$HOME/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+""""" Filetypes ========================
+
+Plugin 'vim-ruby/vim-ruby'
+
+Plugin 'elixir-lang/vim-elixir'
+
+""""""" Markdown
+" Markdown is now included in vim, but by default .md is read as Modula-2
+" files.  This fixes that, because I don't ever edit Modula-2 files :)
+Plugin 'jtratner/vim-flavored-markdown'
+  let g:markdown_fenced_languages=['ruby', 'javascript', 'elixir', 'python', 'clojure', 'sh', 'html', 'sass', 'scss', 'haml', 'erlang']
+  autocmd BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
+  autocmd FileType markdown set tw=80
+
+""""" End Filetypes ====================
+
+""""" Utilities ========================
+
+Plugin 'mileszs/ack.vim'
+
+Plugin 'tpope/vim-fugitive'
+
+Plugin 'tpope/vim-endwise'
+
+Plugin 'tpope/vim-surround'
+
+Plugin 'tpope/vim-commentary'
+
+Plugin 'b3niup/numbers.vim'   " Plugin for intelligently toggling line numbers
+
+Plugin 'mattn/emmet-vim'
+
+Plugin 'rizzatti/dash.vim'
+
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+  let g:snippets_dir = "$HOME/.vim/vimben/vim/snippets"
+
+Plugin 'scrooloose/syntastic' " Syntax highlighting
+  let g:syntastic_mode_map = { "mode": "active",
+                               \ "passive_filetypes": ["java"] }
+
+Plugin 'scrooloose/nerdcommenter'
+
+Plugin 'scrooloose/nerdtree'
+  let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.class$', '\.o']
+  let NERDTreeHijackNetrw = 0
+
+  augroup AuNERDTreeCmd
+    autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
+    autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
+  augroup END
+
+  " If the parameter is a directory, cd into it
+  function s:CdIfDirectory(directory)
+    let explicitDirectory = isdirectory(a:directory)
+    let directory = explicitDirectory || empty(a:directory)
+    if explicitDirectory
+      exe "cd " . fnameescape(a:directory)
+    endif
+    " Allows reading from stdin
+    " ex: git diff | mvim -R -
+    if strlen(a:directory) == 0
+      return
+    endif
+    if directory
+      NERDTree
+      wincmd p
+      bd
+    endif
+    if explicitDirectory
+      wincmd p
+    endif
+  endfunction
+
+  " NERDTree utility function
+  function s:UpdateNERDTree(...)
+    let stay = 0
+    if(exists("a:1"))
+      let stay = a:1
+    end
+    if exists("t:NERDTreeBufName")
+      let nr = bufwinnr(t:NERDTreeBufName)
+      if nr != -1
+        exe nr . "wincmd w"
+        exe substitute(mapcheck("R"), "<CR>", "", "")
+        if !stay
+          wincmd p
+        end
+      endif
+    endif
+    if exists(":CommandTFlush") == 2
+      CommandTFlush
+    endif
+  endfunction
+
+  " Map leader key n to open NERDTree
+  map <Leader>n :NERDTreeToggle<CR>
+
+
+""""" End Utilities ====================
+
+""""" UI Plugins =======================
+Plugin 'bling/vim-airline'       " UI statusbar niceties
+  set laststatus=2               " enable airline even if no splits
+  let g:airline_theme='luna'
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#branch#enabled = 1
+  let g:airline#extensions#syntastic#enabled = 1
+  let g:airline#extensions#tabline#enabled = 0
+  " let g:airline_mode_map = {
+  "       \ 'n' : 'N',
+  "       \ 'i' : 'I',
+  "       \ 'R' : 'REPLACE',
+  "       \ 'v' : 'VISUAL',
+  "       \ 'V' : 'V-LINE',
+  "       \ 'c' : 'CMD   ',
+  "       \ }
+
+Plugin 'dandorman/vim-colors'
+
+""""" End UI Plugins ===================
+
+""""" Code Navigation ===============
+Plugin 'kien/ctrlp.vim.git'
+  let g:ctrlp_match_window_bottom = 1    " Show at bottom of window
+  let g:ctrlp_working_path_mode = 'ra'   " Our working path is our VCS project or the current directory
+  let g:ctrlp_mru_files = 1              " Enable Most Recently Used files feature
+  let g:ctrlp_jump_to_buffer = 2         " Jump to tab AND buffer if already open
+  let g:ctrlp_open_new_file = 'v'        " open selections in a vertical split
+  let g:ctrlp_open_multiple_files = 'vr' " opens multiple selections in vertical splits to the right
+  let g:ctrlp_arg_map = 0
+  let g:ctrlp_dotfiles = 0               " do not show (.) dotfiles in match list
+  let g:ctrlp_showhidden = 0             " do not show hidden files in match list
+  let g:ctrlp_split_window = 0
+  let g:ctrlp_max_height = 40            " restrict match list to a maxheight of 40
+  let g:ctrlp_use_caching = 0            " don't cache, we want new list immediately each time
+  let g:ctrlp_max_files = 0              " no restriction on results/file list
+  let g:ctrlp_working_path_mode = ''
+  let g:ctrlp_dont_split = 'NERD_tree_2' " don't split these buffers
+  let g:ctrlp_custom_ignore = {
+        \ 'dir':  '\v[\/]\.(git|hg|svn|gitkeep)$',
+        \ 'file': '\v\.(exe|so|dll|log|gif|jpg|jpeg|png|psd|DS_Store|ctags|gitattributes)$'
+        \ }
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_prompt_mappings = {
+        \ 'AcceptSelection("e")': ['<c-e>', '<c-space>'],
+        \ 'AcceptSelection("h")': ['<c-x>', '<c-cr>', '<c-s>'],
+        \ 'AcceptSelection("t")': ['<c-t>'],
+        \ 'AcceptSelection("v")': ['<cr>'],
+        \ 'PrtSelectMove("j")':   ['<c-j>', '<down>', '<s-tab>'],
+        \ 'PrtSelectMove("k")':   ['<c-k>', '<up>', '<tab>'],
+        \ 'PrtHistory(-1)':       ['<c-n>'],
+        \ 'PrtHistory(1)':        ['<c-p>'],
+        \ 'ToggleFocus()':        ['<c-tab>'],
+        \}
+
+" Plugin 'tpope/vim-vinegar' " navigate up a directory with '-' in netrw, among other things
+" Plugin 'ervandew/supertab'
+
+""""" End Code Navigation ===========
+
+call vundle#end() " required for Vundle
+
+" Turn on plugins, indentation, etc.
+filetype plugin indent on
+""" End setup Vundle ===================
+
+""" UI Tweaks ==========================
+set number   " Show line numbers
+set ruler    " Show line and column number
+set t_Co=256 " Force 256 colors
+set t_ut= " improve screen clearing by using the background color
 set background=dark
-colorscheme vibrantink
-" colorscheme lucius
-" colorscheme ir_black
-set guifont=Monaco:h14
-" change side bar colour
-highlight clear VertSplit
-highlight VertSplit ctermbg=darkgray
-set fillchars=
+syntax enable
+colorscheme molokai
+set encoding=utf-8    " Set default encoding to UTF-8
+set term=screen-256color
+let $TERM='screen-256color'
+set fillchars+=vert:\  " vim split bar styling, remove '|' NB space after \
+" Highlighting line and column
+set cul " highlight current line
+set cuc " highlight column
+" set greyed out numbering
+highlight LineNr ctermfg=59
 
-"" Whitespace
 
+""" End UI Tweaks ======================
+
+""" Keyboard shortcut setup =====================
+
+
+
+" Remove highlights
+" Clear the search buffer when hitting return
+nnoremap <cr> :nohlsearch<cr>
+
+" NO ARROW KEYS COME ON
+map <Left> :echo "Left arrow disabled!"<cr>
+map <Right> :echo "Right arrow disabled!"<cr>
+map <Up> :echo "Up arrow disabled!"<cr>
+map <Down> :echo "Down arrow disabled!"<cr>
+" map arrow keys to previous / next buffer
+noremap <left> :bp<CR>
+noremap <right> :bn<CR>
+
+" Comment/uncomment blocks by selecting them visually and using # or -#
+" vnoremap # :s#^#\##<cr>
+" vnoremap -# :s#^\###<cr>
+
+""" End Keyboard shortcut setup =================
+
+""" Vim environment handling tweaks ====
+
+" Whitespace
 set nowrap                        " don't wrap lines
 set tabstop=2                     " a tab is two spaces
 set shiftwidth=2                  " an autoindent (with <<) is two spaces
@@ -39,17 +238,39 @@ set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
 
-" if exists("g:enable_mvim_shift_arrow")
-"   let macvim_hig_shift_movement = 1 " mvim shift-arrow-keys
-" endif
+" Searching
+set hlsearch    " highlight matches
+set incsearch   " incremental searching
+set ignorecase  " searches are case insensitive...
+set smartcase   " ... unless they contain at least one capital letter
 
-" required of 'endwise' plugin
-filetype on
-filetype indent on
-filetype plugin on
-"autocmd BufEnter * lcd %:p:h " automatically cd's to the opened file
-"directory
+" Scroll before reaching the edge
+set scrolloff=8       " Number of lines from vertical edge to start scrolling
+set sidescrolloff=15  " Number of cols from horizontal edge to start scrolling
+set sidescroll=1      " Number of cols to scroll at a time
 
+
+" " Tab competion
+set wildmode=list:longest,list:full
+" Disable output and VCS files
+set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
+" Disable archive files
+set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
+" Ignore bundler and sass cache
+set wildignore+=vendor/gems/*,vendor/cache/*,.bundle/*,.sass-cache/*
+" Disable temp and backup files
+set wildignore+=*.swp,._*
+
+
+""""" Normalization ====================
+" Delete trailing white space on save
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+au BufWrite * silent call DeleteTrailingWS()
+""""" End Normalization ================
 
 " List chars
 set listchars=""                  " Reset the listchars
@@ -60,239 +281,21 @@ set listchars+=extends:>          " The character to show in the last column whe
 set listchars+=precedes:<         " The character to show in the last column when wrap is
                                   " off and the line continues beyond the right of the screen
 
-
-"" Searching
-
-set hlsearch    " highlight matches
-set incsearch   " incremental searching
-set ignorecase  " searches are case insensitive...
-set smartcase   " ... unless they contain at least one capital letter
-
-"" Scrolling
-" Scroll before reaching the edge
-set scrolloff=8       " Number of lines from vertical edge to start scrolling
-set sidescrolloff=15  " Number of cols from horizontal edge to start scrolling
-set sidescroll=1      " Number of cols to scroll at a time
-
-"" Use space and shift space key to scroll up and down
-" map <Space> <C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E><C-E>
-" map <S-Space> <C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y><C-Y>
-
-"" Wild settings
-
-" TODO: Investigate the precise meaning of these settings
-" set wildmode=list:longest,list:full
-
-" Disable output and VCS files
-set wildignore+=*.o,*.out,*.obj,.git,*.rbc,*.class,.svn,*.gem
-
-" Disable archive files
-set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
-
-" Ignore bundler and sass cache
-set wildignore+=vendor/gems/*,vendor/cache/*,.bundle/*,.sass-cache/*
-
-" Disable temp and backup files
-set wildignore+=*.swp,*~,._*
-
-"" Key Mappings
-
-" remap leader key from '\' to ','
-let mapleader = ","
-" set timeoutlen=250 " ever notice a slight lag after typing the leader key + command this lowers the timeout
-
-" upper/lower word
-nmap <leader>u mQviwU`Q
-nmap <leader>l mQviwu`Q
-
-" upper/lower first char of word
-nmap <leader>U mQgewvU`Q
-nmap <leader>L mQgewvu`Q
-
-" Swap two words
-nmap <silent> gw :s/\(\%#\w\+\)\(\_W\+\)\(\w\+\)/\3\2\1/<CR>`'
-
-" Underline the current line with '='
-nmap <silent> <leader>ul :t.\|s/./=/g\|:nohls<cr>
-
-" Map the arrow keys to be based on display lines, not physical lines
-" map <Down> gj
-" map <Up> gk
-
-" Toggle hlsearch with <leader>hs
-nmap <leader>hs :set hlsearch! hlsearch?<CR>
-
 " Adjust viewports to the same size
-" map <Leader>= <C-w>=
-
-" Remove trailing whitespace
-map <Leader>w :%s/\s\+$//g<CR>
-
-" Insert the current directory into a command-line path
-"cmap <C-P> <C-R>=expand("%:p:h") . "/"
-
-if has("gui_macvim")
-  " Command-s to save
-  map <D-s> :w<space>
-  " Command-Shift-F on OSX
-  map <D-F> :Ack<space>
-
-else
-  " Control-Shift-F on other systems
-  " map <C-S-F> :Ack<space>
-
-  " Control + Shift for tabbing between non-gui tab panes
-  set showtabline=1    " File tabs allways visible if set to 2
-"  :nmap <C-S-n> :tabprevious<cr>
-"  :nmap <C-n> :tabnext<cr>
-"  :nmap <C-t> :tabnew<cr>
-"  :map <C-t> :tabnew<cr>
-"  :map <C-S-n> :tabprevious<cr>
-"  :map <C-n> :tabnext<cr>
-"  :map <C-q> :tabclose<cr>
-
-  map <Tab> <C-W>
-  map <Tab><Tab> <C-W><C-W>
-
-  " STOP USING ARROW KEYS!!
-  map <up> <nop>
-  map <down> <nop>
-  " map <left> <nop>
-  " map <right> <nop>
-  imap <up> <nop>
-  imap <down> <nop>
-  imap <left> <nop>
-  imap <right> <nop>
-
-  " map arrow keys to previous / next buffer
-  noremap <left> :bp<CR>
-  noremap <right> :bn<CR>
-endif
+map <Leader>= <C-w>=
+" Double tab to jump between panes
+map <Tab> <C-W>
+map <Tab><Tab> <C-W><C-W>
 
 
-if has("autocmd")
-  if exists("g:autosave_on_blur")
-    au FocusLost * silent! wall
-  endif
-endif
+""""" Backup files  ====================
+
+set backupdir=$HOME/.vim/_backup//    " where to put backup files.
+set directory=$HOME/.vim/_temp//      " where to put swap files.
+
+""""" End Backup files  ================
 
 
-"" Plugin specific mappings
-" NERDTree
-
-let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.class$', '\.o', '\~$']
-let NERDTreeHijackNetrw = 0
-
-augroup AuNERDTreeCmd
-autocmd AuNERDTreeCmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
-autocmd AuNERDTreeCmd FocusGained * call s:UpdateNERDTree()
-
-" " If the parameter is a directory, cd into it
-function s:CdIfDirectory(directory)
-  let explicitDirectory = isdirectory(a:directory)
-  let directory = explicitDirectory || empty(a:directory)
-
-  if explicitDirectory
-    exe "cd " . fnameescape(a:directory)
-  endif
-
-  " Allows reading from stdin
-  " ex: git diff | mvim -R -
-  if strlen(a:directory) == 0
-    return
-  endif
-
-  if directory
-    NERDTree
-    wincmd p
-    bd
-  endif
-
-  if explicitDirectory
-    wincmd p
-  endif
-endfunction
-
-" " NERDTree utility function
-function s:UpdateNERDTree(...)
-  let stay = 0
-
-  if(exists("a:1"))
-    let stay = a:1
-  end
-
-  if exists("t:NERDTreeBufName")
-    let nr = bufwinnr(t:NERDTreeBufName)
-    if nr != -1
-      exe nr . "wincmd w"
-      exe substitute(mapcheck("R"), "<CR>", "", "")
-      if !stay
-        wincmd p
-      end
-    endif
-  endif
-
-  if exists(":CommandTFlush") == 2
-    CommandTFlush
-  endif
-endfunction
-
-" Map leader key n to open NERDTree
-map <Leader>n :NERDTreeToggle<CR>
 
 
-"" Functions
-
-" Some file types should wrap their text
-function! s:setupWrapping()
-  set wrap
-  set linebreak
-  " set textwidth=80
-  set nolist
-endfunction
-
-""" FocusMode
-" http://paulrouget.com/e/vimdarkroom/
-" function! ToggleFocusMode()
-"   if (&foldcolumn != 12)
-"     set laststatus=0
-"     set numberwidth=10
-"     set foldcolumn=12
-"     set noruler
-"     hi FoldColumn ctermbg=none
-"     hi LineNr ctermfg=0 ctermbg=none
-"     hi NonText ctermfg=0
-"   else
-"     set laststatus=2
-"     set numberwidth=4
-"     set foldcolumn=0
-"     set ruler
-"     execute 'colorscheme ' . g:colors_name
-"   endif
-" endfunc
-" nnoremap <F1> :call ToggleFocusMode()<cr>
-
-"" File types
-
-" Make sure all mardown files have the correct filetype set and setup wrapping
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown | call s:setupWrapping()
-
-" Treat JSON files like JavaScript
-au BufNewFile,BufRead *.json set ft=javascript
-
-" Treat xml.erb files like xml
-au BufNewFile,BufRead *.xml.erb set ft=xml
-
-" Arduino file syntax
-au BufRead,BufNewFile *.pde set filetype=arduino
-au BufRead,BufNewFile *.ino set filetype=arduino
-
-" make Python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python set softtabstop=4 tabstop=4 shiftwidth=4 textwidth=80
-
-
-"" Backup and swap files
-
-set backupdir=~/.vim/_backup//    " where to put backup files.
-set directory=~/.vim/_temp//      " where to put swap files.
 

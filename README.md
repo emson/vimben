@@ -10,7 +10,7 @@ My personal Vim installation, which is basically a customised fork of the [Janus
 Use Mercural to download the Vim source:
 
 * <http://www.vim.org/mercurial.php>
-  
+
 Now configure Vim. Please note that if you have tried to configure Vim
 previously you will need to do a clean:
 
@@ -20,7 +20,7 @@ Configuration and Compilation:
 
     ./configure CFLAGS="-arch x86_64" CXXFLAGS="-arch x86_64" \
     --with-features=huge  --enable-multibyte --with-tlib=ncurses \
-    --enable-pythoninterp --enable-rubyinterp 
+    --enable-pythoninterp --enable-rubyinterp
 
     make
     make install
@@ -36,45 +36,45 @@ VimBen.
 
 ## Useful Commands
 
-Switch to command line: `Ctrl-z`  
-Switch Vim to foreground: `fg`  
-Move forward one screen: `Ctrl-F`  
-Move backward one screen: `Ctrl-B`  
-Jump to the last insertion point: `gi` or two back ticks  
-Jump to insertion point history: `g;` or `g,`  
-Jump list: `:jumps`  
-Record a macro into register 'a': `qa`  
-Stop recording the macro: `q`  
-Get from register 'a': `@a`  
-Quit all, including open windows: `:qall`  
-Show history of commands: `q:`  
+Switch to command line: `Ctrl-z`
+Switch Vim to foreground: `fg`
+Move forward one screen: `Ctrl-F`
+Move backward one screen: `Ctrl-B`
+Jump to the last insertion point: `gi` or two back ticks
+Jump to insertion point history: `g;` or `g,`
+Jump list: `:jumps`
+Record a macro into register 'a': `qa`
+Stop recording the macro: `q`
+Get from register 'a': `@a`
+Quit all, including open windows: `:qall`
+Show history of commands: `q:`
 Resize a horizontal split window:
 
     Ctrl-w +
     10Ctrl-w -
     :res +10
 
-Verticle split to fullscreen: `Ctrl-w |`  
+Verticle split to fullscreen: `Ctrl-w |`
 Resize a verticle split window:
 
     Ctrl-w <
     Ctrl-w >
     :30winc <
 
-Horizontal split to fullscreen: `Ctrl-w _`  
-Equal width split panes: `Ctrl-w =`  
-Create a new window pane: `Ctrl-w n`  
-Quit a window pane without quitting the buffer: `Ctrl-w q`  
-Rotate a window pane to a different position: `Ctrl-w r`  
-Column select with mouse: `Ctrl + Alt + Cmd  then mouse click`  
-Column select `Ctrl-v`  
+Horizontal split to fullscreen: `Ctrl-w _`
+Equal width split panes: `Ctrl-w =`
+Create a new window pane: `Ctrl-w n`
+Quit a window pane without quitting the buffer: `Ctrl-w q`
+Rotate a window pane to a different position: `Ctrl-w r`
+Column select with mouse: `Ctrl + Alt + Cmd  then mouse click`
+Column select `Ctrl-v`
 Replace the text in a column:
 
     Select a column append new text to the end of each column,
     then select the original column and delete it.
-    1. block-select (with Ctrl-V + cursor movement) 
-    2. A3<Esc> 
-    3. re-select with gv 
+    1. block-select (with Ctrl-V + cursor movement)
+    2. A3<Esc>
+    3. re-select with gv
     4. delete with d or <Del> k
 
 Use vim bindings in the console (<http://blog.siyelo.com/vim-tips-part-i>):
@@ -115,16 +115,16 @@ To remove a submodule you need to:
 
 * Delete the relevant lines from the .gitmodules file.
 * Delete the relevant section from .git/config.
-* Run `git rm --cached path_to_submodule`  
+* Run `git rm --cached path_to_submodule`
 	**NB: (no trailing slash).**
-* Delete the unwanted directories:  
+* Delete the unwanted directories:
 	`rm -rf .vim/vimben/vim/bundle/my_module`
 * Commit the now untracked submodule files.
 
 ### Pathogen
-<https://github.com/tpope/vim-pathogen>  
+<https://github.com/tpope/vim-pathogen>
 Pathogen is used to load all the plugins. Note that plugins are loaded
-from the `bundle` directory.  
+from the `bundle` directory.
 To install a new plugin try and use a Git Submodule and put this module
 into the bundle directory. e.g.
 
@@ -133,11 +133,11 @@ vimben/vim/bundle/some_plugin
 
 
 ### Vivid Chalk
-<https://github.com/tpope/vim-vividchalk>  
+<https://github.com/tpope/vim-vividchalk>
 The Vivid Chalk color scheme.
 
 ### Color Sampler Pack
-<http://www.vim.org/scripts/script.php?script_id=625>  
+<http://www.vim.org/scripts/script.php?script_id=625>
 Contains all the usual Vim color scheme suspects.
 
 ### Vim ir_black
@@ -165,17 +165,17 @@ From a model file:
 * `:RVunittest` - run unit tests in a verticle split
 * `:RSunittest` - run unit tests in a horizontal split
 * `:RTunittest` - run unit tests in new tab
-* `Rcontroller` - 
-* `Rfunctionaltest` - 
+* `Rcontroller` -
+* `Rfunctionaltest` -
 
 
 ### Vim Surround
 
 <https://github.com/tpope/vim-surround>
 
-`"Hello world!"` to `'Hello world!'` - `cs"'`  
-`'Hello world!'` to `<q>Hello world</q>` - `cs'<q>`  
-`"Hello world!"` to `Hello world!` - `ds"`  
+`"Hello world!"` to `'Hello world!'` - `cs"'`
+`'Hello world!'` to `<q>Hello world</q>` - `cs'<q>`
+`"Hello world!"` to `Hello world!` - `ds"`
 `"Wrap whole line in parentheses"` - `yss"`
 `<em>Hello</em> world!` - `ysiw<em>`
 
@@ -212,10 +212,10 @@ From a model file:
 <https://github.com/tpope/vim-endwise.git>
 
 This plugin automatically adds the `end` statement when you create new
-`class, module, def` definitions.  
+`class, module, def` definitions.
 Note that you will need to have the following settings to ensure that
 the `end` is appropriately indented.
-    
+
     filetype on
     filetype indent on
     filetype plugin on
@@ -245,7 +245,7 @@ Once CtrlP is open:
 
 <https://github.com/msanders/snipmate.vim>
 
-Just press **Tab** after typing a snippet keyword e.g.  
+Just press **Tab** after typing a snippet keyword e.g.
 
 	cla [TAB]
 	def [TAB]
@@ -299,7 +299,7 @@ Git for vim:
 ### Exuberant CTags
 <https://github.com/vim-scripts/ctags.vim>
 
-Install Exuberant CTags:  
+Install Exuberant CTags:
 	brew install ctags-exuberant
 
 Build your tag index file against your source:
@@ -308,7 +308,7 @@ Build your tag index file against your source:
 
 Creates a tags file.  Add it to your **.gitignore**
 
-**Commands**  
+**Commands**
 
 	Ctrl ]
 	Ctrl t
@@ -330,11 +330,11 @@ Creates a tags file.  Add it to your **.gitignore**
 Use Git to create your Ctags.
 
 
-**References**  
+**References**
 
-* <http://vim.wikia.com/wiki/Browsing_programs_with_tags>  
+* <http://vim.wikia.com/wiki/Browsing_programs_with_tags>
 * <http://paintincode.blogspot.com/2011/04/mac-vim-setup-for-python-programming.html>
-* <http://www.vim.org/scripts/script.php?script_id=610>  
+* <http://www.vim.org/scripts/script.php?script_id=610>
 * <http://www.thegeekstuff.com/2009/04/ctags-taglist-vi-vim-editor-as-sourece-code-browser/>
 * <http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html>
 
@@ -379,21 +379,21 @@ In the quick fix window:
 <https://github.com/myusuf3/numbers.vim>
 
 In navigation mode the current cursor is set at 0 making it easy to
-work out how many lines to delete etc.  
+work out how many lines to delete etc.
 In insert mode the line numbers revert to normal line numbers.
 
 ## Vim Arduino Ino
 
 <https://github.com/jplaut/vim-arduino-ino>
 
-Ensure **ino** is installed: <http://inotool.org/>  
-Using Python: `pip install ino`  
+Ensure **ino** is installed: <http://inotool.org/>
+Using Python: `pip install ino`
 
 Install Picocom for serial control with Arduino: `brew install picocom`
 Picocom commands can be run from `ino` e.g.:
 
     ino serial # start serial monitor
-    
+
     Ctrl+a Ctrl+x # to quit serial monitor
     Ctrl+a Ctrl+a Ctrl+x # to quit serial monitor from tmux
 
@@ -433,7 +433,7 @@ By default, CoffeeMake shows all compiler output and jumps to the first line rep
 
 
 ## Rainbow-parentheses.vim
-<https://github.com/kien/rainbow_parentheses.vim.git>  
+<https://github.com/kien/rainbow_parentheses.vim.git>
 
 Plugin to highlight nested parentheses differently.
 Commands:
@@ -444,14 +444,14 @@ Commands:
     :RainbowParenthesesLoadBraces   " {}
     :RainbowParenthesesLoadChevrons " <>
 
-    
+
 ## Vim Puppet
 <https://github.com/rodjek/vim-puppet/>
 Add syntax highlighting etc. for puppet.
 
 
 ## Emmet-vim (ZenCoding)
-* ~~<https://github.com/mattn/zencoding-vim>~~  
+* ~~<https://github.com/mattn/zencoding-vim>~~
 * <https://github.com/mattn/emmet-vim>
 
 A simple set of commands for generating HTML.
@@ -528,7 +528,7 @@ In `normal mode` find a piece of text and hit `Ctrl-n`, this will highlight the 
 
 ## Dash.vim
 
-Access Dash API documents from the Vim. 
+Access Dash API documents from the Vim.
 
 * <https://github.com/rizzatti/dash.vim>
 
@@ -568,7 +568,7 @@ Used by Tmux-resurrect to save the current Vim session
 Additional plugins that may be useful:
 
 * tComments
-* vim-rake  
+* vim-rake
   <https://github.com/tpope/vim-rake>
 
 ## Unsure of but potential plugins
