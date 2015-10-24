@@ -49,6 +49,8 @@ Plugin 'mattn/emmet-vim'
 
 Plugin 'rizzatti/dash.vim'
 
+Plugin 'jlanzarotta/bufexplorer'
+
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
@@ -58,7 +60,7 @@ Plugin 'scrooloose/syntastic' " Syntax highlighting
   let g:syntastic_mode_map = { "mode": "active",
                                \ "passive_filetypes": ["java"] }
 
-Plugin 'scrooloose/nerdcommenter'
+"Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'scrooloose/nerdtree'
   let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.class$', '\.o']
