@@ -17,6 +17,9 @@ call vundle#begin()
 
 """"" Filetypes ========================
 
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
 Plugin 'vim-ruby/vim-ruby'
 
 Plugin 'elixir-lang/vim-elixir'
