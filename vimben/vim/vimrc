@@ -57,7 +57,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-  let g:snippets_dir = "$HOME/.vim/vimben/vim/snippets"
+  let g:snippets_dir = "$HOME/.vim/snippets"
 
 Plugin 'scrooloose/syntastic' " Syntax highlighting
   let g:syntastic_mode_map = { "mode": "active",
