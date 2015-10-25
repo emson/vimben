@@ -15,10 +15,10 @@ filetype off     " required for Vundle
 set rtp+=$HOME/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-""""" Filetypes ========================
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+""""" Filetypes ========================
 
 Plugin 'vim-ruby/vim-ruby'
 
@@ -63,7 +63,7 @@ Plugin 'scrooloose/syntastic' " Syntax highlighting
   let g:syntastic_mode_map = { "mode": "active",
                                \ "passive_filetypes": ["java"] }
 
-"Plugin 'scrooloose/nerdcommenter'
+" Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'scrooloose/nerdtree'
   let NERDTreeIgnore=['\.pyc$', '\.pyo$', '\.rbc$', '\.class$', '\.o']
