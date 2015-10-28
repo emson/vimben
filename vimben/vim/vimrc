@@ -54,10 +54,12 @@ Plugin 'rizzatti/dash.vim'
 
 Plugin 'jlanzarotta/bufexplorer'
 
+Plugin 'honza/vim-snippets'
+
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-  let g:snippets_dir = "$HOME/.vim/snippets"
+  let g:snippets_dir = "$HOME/.vim/bundle/vim-snippets/snippets"
 
 Plugin 'scrooloose/syntastic' " Syntax highlighting
   let g:syntastic_mode_map = { "mode": "active",
