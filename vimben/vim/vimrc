@@ -36,6 +36,9 @@ Plugin 'jtratner/vim-flavored-markdown'
 
 """"" Utilities ========================
 
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+
 Plugin 'mileszs/ack.vim'
 
 Plugin 'tpope/vim-fugitive'
@@ -55,6 +58,8 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'jlanzarotta/bufexplorer'
 
 Plugin 'honza/vim-snippets'
+
+Plugin 'leafgarland/typescript-vim'
 
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -227,6 +232,11 @@ set shiftwidth=2                  " an autoindent (with <<) is two spaces
 set expandtab                     " use spaces, not tabs
 set list                          " Show invisible characters
 set backspace=indent,eol,start    " backspace through everything in insert mode
+set textwidth=0                   " prevent Vim from automatically inserting line breaks in newly entered text
+set wrapmargin=0                  " prevent Vim from automatically inserting line breaks in newly entered text
+" Add spell checking
+"https://www.linux.com/learn/using-spell-checking-vim
+" set spell spelllang=en_gb
 
 " Searching
 set hlsearch    " highlight matches
