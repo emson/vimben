@@ -1,4 +1,4 @@
-#VimBen
+# VimBen
 
 My personal Vim installation, which is basically a customised fork of the [Janus Project](https://github.com/carlhuda/janus/).
 
